@@ -1,0 +1,1 @@
+!function(){Ti.UI.backgroundColor="#092B55";var n=require("ui/main")();n.open(),n.addEventListener("open",function(){var n=new(require("controls/bsh.proxy"));n.loadStations(!0,{onload:function(){Ti.UI.createNotification({message:"Tidedaten mit dem BSH synchronisiert."}).show()},onprogress:function(){}})})}();
