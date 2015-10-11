@@ -2,7 +2,7 @@ var Map = require('ti.map');
 
 module.exports = function() {
 	return {
-		radnetz : ['rossdamm', 'neuhof', 'bubendey', 'waltershof', 'almig', 'veddel', 'theater'].map(function(key) {
+		radnetz : ['bunthaus','rossdamm', 'neuhof', 'bubendey', 'waltershof', 'almig', 'veddel', 'theater'].map(function(key) {
 			return Map.createRoute({
 				points : require('model/routes')[key].map(function(p) {
 					return {
@@ -45,7 +45,7 @@ module.exports = function() {
 				latitude : p.ll[0],
 				image : '/images/besteck.png',
 				longitude : p.ll[1],
-				title : p.title
+				title : p.title,subtitle : p.subtitle
 			});
 		}),
 		faehre : require('model/pois').ferries.map(function(p) {

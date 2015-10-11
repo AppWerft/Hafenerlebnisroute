@@ -16,6 +16,7 @@ module.exports = {
 		"properties" : {
 			"Terminal" : "Arcelor Mittal",
 			"Type" : "Bulk Cargo",
+			"wiki" : "https://de.wikipedia.org/wiki/ArcelorMittal",
 			"PORTlog-ID" : 7812
 		},
 		"geometry" : {
@@ -36,7 +37,8 @@ module.exports = {
 	}, {
 		"type" : "Feature",
 		"properties" : {
-			"Terminal" : "Boiminflot",
+			"wiki" : "https://de.wikipedia.org/wiki/Bochumer_Mineral%C3%B6lgesellschaft",
+			"Terminal" : "Bominflot",
 			"Type" : "Bulk Cargo",
 			"PORTlog-ID" : 7810
 		},
@@ -93,6 +95,7 @@ module.exports = {
 		"properties" : {
 			"Terminal" : "Haltermann",
 			"Type" : "Bulk Cargo",
+			"wiki" : "https://de.wikipedia.org/wiki/Haltermann",
 			"PORTlog-ID" : 7802
 		},
 		"geometry" : {
@@ -104,6 +107,7 @@ module.exports = {
 		"properties" : {
 			"Terminal" : "Hansaport",
 			"Type" : "Bulk Cargo",
+			"wiki" : "https://de.wikipedia.org/wiki/Hansaport",
 			"PORTlog-ID" : 7950
 		},
 		"geometry" : {
@@ -169,6 +173,7 @@ module.exports = {
 		"type" : "Feature",
 		"properties" : {
 			"Terminal" : "Nynas",
+			"wiki" : "https://de.wikipedia.org/wiki/Nynas",
 			"Type" : "Bulk Cargo",
 			"PORTlog-ID" : 11464
 		},
@@ -212,6 +217,7 @@ module.exports = {
 	}, {
 		"type" : "Feature",
 		"properties" : {
+			wiki: "https://de.wikipedia.org/wiki/Rhenus",
 			"Terminal" : "Rhenus-Dradenau",
 			"Type" : "Break Bulk",
 			"PORTlog-ID" : 8115
@@ -225,6 +231,7 @@ module.exports = {
 		"properties" : {
 			"Terminal" : "Sasol",
 			"Type" : "Bulk Cargo",
+			"wiki" :"https://de.wikipedia.org/wiki/Sasol",
 			"PORTlog-ID" : "11604"
 		},
 		"geometry" : {
@@ -235,7 +242,7 @@ module.exports = {
 		"type" : "Feature",
 		"properties" : {
 			"Terminal" : "Shell-Kattwyk",
-			"Type" : "Bulk Cargo",
+			"Type" : "Bulk Cargo","wiki":"https://de.wikipedia.org/wiki/Royal_Dutch_Shell",
 			"PORTlog-ID" : 7795
 		},
 		"geometry" : {
@@ -279,7 +286,7 @@ module.exports = {
 		"type" : "Feature",
 		"properties" : {
 			"Terminal" : "HamburgCruiseCenter-Altona",
-			"wiki":"https://de.wikipedia.org/wiki/Hamburg_Cruise_Center_Altona",
+			"wiki" : "https://de.wikipedia.org/wiki/Hamburg_Cruise_Center_Altona",
 			"Type" : "Cruise Terminal",
 			"PORTlog-ID" : 7539
 		},
@@ -291,7 +298,7 @@ module.exports = {
 		"type" : "Feature",
 		"properties" : {
 			"Terminal" : "HamburgCruiseCenter-HafenCity",
-			"wiki":"https://de.wikipedia.org/wiki/Hamburg_Cruise_Center_HafenCity",
+			"wiki" : "https://de.wikipedia.org/wiki/Hamburg_Cruise_Center_HafenCity",
 			"Type" : "Passenger",
 			"PORTlog-ID" : 7538
 		},
@@ -437,18 +444,7 @@ module.exports = {
 			"type" : "Polygon",
 			"coordinates" : [[[9.953396022319794, 53.52835926172235], [9.953599870204926, 53.528313024919235], [9.953956604003906, 53.52608722118013], [9.951993227005005, 53.52601068716632], [9.950652122497559, 53.52664846638927], [9.951231479644775, 53.52815358727999], [9.953396022319794, 53.52835926172235]]]
 		}
-	}, {
-		"type" : "Feature",
-		"properties" : {
-			"Terminal" : "Rhenus-Dradenau",
-			"Type" : "Multi Purpose",
-			"PORTlog-ID" : 8115
-		},
-		"geometry" : {
-			"type" : "Polygon",
-			"coordinates" : [[[9.8939448595047, 53.53160049525567], [9.893885850906372, 53.531321500651025], [9.893931448459625, 53.53117163993318], [9.894078969955444, 53.531002647423634], [9.893982410430908, 53.53087669973738], [9.893510341644285, 53.53052914595131], [9.893161654472351, 53.530262898690324], [9.89343523979187, 53.529024109482364], [9.892469644546509, 53.52642843364242], [9.892818331718445, 53.52627855560964], [9.892909526824951, 53.52597879795306], [9.892324805259705, 53.52595328656521], [9.892330169677734, 53.525910236063304], [9.89293098449707, 53.52593574747711], [9.892965853214264, 53.52585761872382], [9.892971217632294, 53.52568701053708], [9.893724918365479, 53.523740115182676], [9.894808530807495, 53.52346585246305], [9.897335171699522, 53.525669471338716], [9.899030327796936, 53.52712998334021], [9.900280237197876, 53.5282014186348], [9.900358021259308, 53.5282811374394], [9.900312423706055, 53.5283305630229], [9.896753132343292, 53.529805332122066], [9.896299839019775, 53.52998867820467], [9.89518404006958, 53.53093249939143], [9.89491581916809, 53.531130189002674], [9.894218444824219, 53.53150643442291], [9.8939448595047, 53.53160049525567]]]
-		}
-	}, {
+	},  {
 		"type" : "Feature",
 		"properties" : {
 			"Terminal" : "Wallmann & Co.",

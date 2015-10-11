@@ -9,6 +9,10 @@ module.exports = function() {
 		title : 'Radlerkarte',
 	}));
 	self.addTab(Ti.UI.createTab({
+		window : require('ui/touren.window')(),
+		title : 'Touren',
+	}));
+	self.addTab(Ti.UI.createTab({
 		window : require('ui/tide.window')(),
 		title : 'Tideplan',
 	}));

@@ -15,25 +15,21 @@ module.exports = function() {
 					pdf : _e.annotation.pdf,
 					line : _e.annotation.line.replace('l', '')
 				}).open();
-			} else if (_e.annotation.wiki && _e.clicksource != 'pin') {
+			} else if (_e.annotation.wiki && _e.clicksource != 'pin' && _e.clicksource !== 'polygon') {
 				require('ui/wiki.window')({
 					title : _e.annotation.title,
 					url : _e.annotation.wiki
 				}).open();
+				self.map.deselectAnnotation(self.map.dummyAnnotation);
 				_e.annotation.wiki = undefined;
 				
 			}
 		} else if (_e.clicksource == 'polygon') {
-			var fillColor = _e.source.fillColor;
-			_e.source.fillColor = fillColor.replace(/#[\d]/, '#');
-			setTimeout(function() {
-				_e.source.fillColor = fillColor;
-			}, 100);
 			self.map.dummyAnnotation.setLatitude(_e.source.center.y);
 			if (_e.source.wiki) {
 				self.map.dummyAnnotation.rightButton = '/assets/wiki.png';
-				
 				self.map.dummyAnnotation.wiki = _e.source.wiki;
+				self.map.deselectAnnotation(self.map.dummyAnnotation);
 			} else {
 				self.map.dummyAnnotation.rightButton = null;
 				self.map.dummyAnnotation.wiki = undefined;

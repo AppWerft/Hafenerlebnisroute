@@ -1,25 +1,20 @@
 exports.ferries = [{
 	title : 'Finkenwerder',
-	ll : [53.5364187,9.8787044],
+	ll : [53.5364187, 9.8787044],
 	line : 'l62',
 	pdf : "http://www.hadag.de/files/62_v01_2s.pdf"
 }, {
 	title : 'Bubendey',
-	ll : [53.5401231,9.8853134],
+	ll : [53.5401231, 9.8853134],
 	line : 'l62',
 	pdf : "http://www.hadag.de/files/62_v01_2s.pdf"
 }, {
 	title : 'Toller Ort',
 	subtitle : 'nur für Hafenarbeiter',
-	ll : [53.5399701,9.9365543],
+	ll : [53.5399701, 9.9365543],
 	line : 'l61',
 	pdf : "http://www.hadag.de/files/61_v02_1s.pdf"
-}, 
-
-
-
-
-{
+}, {
 	title : "Waltershof",
 	subtitle : 'nur Montag - Freitag',
 	ll : [53.5256317, 9.9371194],
@@ -65,7 +60,8 @@ exports.ferries = [{
 
 exports.star = [{
 	ll : [53.5391370, 9.9244565],
-	title : "Elbtunnel"
+	title : "Elbtunnel",
+	subtitle : 'nur eine Röhre begehbar.\nAm Wochenende können Radfahrer auch die großen Lastenaufzüge nutzen'
 }, {
 	ll : [53.5258868, 9.9299096],
 	title : "Waltershof"
@@ -77,7 +73,8 @@ exports.star = [{
 	title : "Altenwerder"
 }, {
 	ll : [53.5423130, 9.9667310],
-	title : "Steinwerder"
+	title : "Steinwerder",
+	subtitle : "Herrlicher Blich auf Hamburg, im Sommer auch Imbiss"
 }, {
 	ll : [53.5412419, 9.9702500],
 	title : "Steinwerder"
@@ -115,7 +112,8 @@ exports.red = [{
 	title : "IBA Dock"
 }, {
 	ll : [53.5218558, 9.9381064],
-	title : "Köhlbrandbrücke",subtitle:'nur für Kraftfahrzeuge.\nFähre (61) nur werktags'
+	title : "Köhlbrandbrücke",
+	subtitle : 'nur für Kraftfahrzeuge.\nFähre (61) nur werktags'
 }, {
 	ll : [53.5158086, 9.9825238],
 	title : "Honigfabrik Kommunikationszentrum"
@@ -151,16 +149,23 @@ exports.red = [{
 	title : "Harburger Binnenhafen"
 }, {
 	ll : [53.4566177, 10.0694274],
-	title : "Leuchtturm Bunthäuser Spitze"
+	title : "Leuchtturm Bunthäuser Spitze",
+
 }];
 
 exports.besteck = [{
 	ll : [53.5113355, 9.9672996],
-	title : 'Spanisches Freizeitheim'
+	title : 'Spanisches Freizeitheim',
+	subtitle : "Geöffnet Freitag-Sonntag,\nAngebot:\nleckere, warme Speisen, auch Fisch"
 }, {
 	ll : [53.5130007, 9.9135989],
-	title : 'Shell Autohof'
+	title : 'Shell Autohof',
+	subtitle : "7x24 geöffnet, Truckerträume …"
 }, {
 	ll : [53.4897335, 9.9364728],
 	title : "Restaurant Wasserturm"
+}, {
+	ll : [53.4621113,10.0619672],
+	title : "Elbaue-Tidezentrum",
+	subtitle : "geöffnet: Samstag/Sonntag\nKaffee und Kuchen"
 }];

@@ -65,6 +65,19 @@ module.exports = function(_event) {
 				showAsAction : Ti.Android.SHOW_AS_ACTION_NEVER,
 			}).addEventListener("click", toggleOverlay);
 		});
+		var Map = require('ti.map');
+
+		var maptypeItem = menu.add({
+			title : 'Luftbild',
+			itemId : 99,
+			checkable : true,
+			checked : false,
+			showAsAction : Ti.Android.SHOW_AS_ACTION_NEVER,
+		});
+		maptypeItem.addEventListener("click", function() {
+			maptypeItem.setChecked(maptypeItem.checked ? false : true);
+			mapwin.map.setMapType((maptypeItem.checked) ? Map.HYBRID_TYPE : Map.NORMAL_TYPE);
+		});
 	};
 	АктйонБар.setTitle('Hafenerlebnisroute');
 	АктйонБар.setFont('Aller Bold');

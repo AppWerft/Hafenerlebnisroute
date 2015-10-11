@@ -239,7 +239,7 @@ exports.locations = [{
 	"id" : "DE__509A",
 	"skn" : 1.85
 }, {
-	"label" : "Hetlingen ",
+	"label" : "Hetlingen",
 	"gps" : "53.609444444444,9.5844444444444",
 	"id" : "DE__711P",
 	"skn" : 1.9
