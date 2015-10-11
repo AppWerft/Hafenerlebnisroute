@@ -55,7 +55,7 @@ module.exports = function() {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hadag');
 		АктйонБар.setSubtitle('Linie' + options.line);
-		АктйонБар.setBackgroundColor('#777');
+		АктйонБар.setBackgroundColor('#f00');
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {

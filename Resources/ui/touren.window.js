@@ -31,50 +31,51 @@ module.exports = function() {
 		left : -320,
 		duration : 1500
 	});
-
-	self.list = Ti.UI.createTableView({
-		top : 0,
-		bottom : 0,
-		data : touren.map(function(t) {
-			var row = Ti.UI.createTableViewRow({
-				height : Ti.UI.SIZE,
-				layout : 'vertical',
-				hasChild : t.sub ? true : false,
-				itemId: t.itemId,
-				backgroundColor : 'white'
-			});
-			row.add(Ti.UI.createLabel({
-				text : t.title,
-				left : 10,
-				top : 10,
-				font : {
-					fontSize : 22,
-					fontFamily : 'Aller Bold'
-				},
-				color : '#444'
-			}));
-			row.add(Ti.UI.createLabel({
-				text : 'Länge: ' + t.dist + ' km',
-				left : 10,
-				top : 10,
-				bottom : 10,
-				font : {
-					fontSize : 16,
-					fontFamily : 'Aller'
-				},
-				color : '#444'
-			}));
-			return row;
-		}),
-		height : Ti.UI.FILL
+	self.addEventListener('open', function() {
+		self.list = Ti.UI.createTableView({
+			top : 0,
+			bottom : 0,
+			data : touren.map(function(t) {
+				var row = Ti.UI.createTableViewRow({
+					height : Ti.UI.SIZE,
+					layout : 'vertical',
+					hasChild : t.sub ? true : false,
+					itemId : t.itemId,
+					backgroundColor : 'white'
+				});
+				row.add(Ti.UI.createLabel({
+					text : t.title,
+					left : 10,
+					top : 10,
+					font : {
+						fontSize : 22,
+						fontFamily : 'Aller Bold'
+					},
+					color : '#444'
+				}));
+				row.add(Ti.UI.createLabel({
+					text : 'Länge: ' + t.dist + ' km',
+					left : 10,
+					top : 10,
+					bottom : 10,
+					font : {
+						fontSize : 16,
+						fontFamily : 'Aller'
+					},
+					color : '#444'
+				}));
+				return row;
+			}),
+			height : Ti.UI.FILL
+		});
+		self.list.addEventListener('click', function(_e) {
+			if (_e.rowData.hasChild == true)
+				require('ui/tour.window')({
+					route : _e.rowData.itemId
+				}).open();
+		});
+		self.add(self.list);
 	});
-	self.list.addEventListener('click', function(_e) {
-		if (_e.rowData.hasChild == true)
-			require('ui/tour.window')({
-				route : _e.rowData.itemId
-			}).open();
-	});
-	self.add(self.list);
 	return self;
 };
 

@@ -15,7 +15,7 @@ module.exports = function(args) {
 			self.children[0].add(Ti.UI.createLabel({
 				left : 10,
 				right : 10,
-				top : 5,
+				top : 10,
 				color : '#444',
 				font : {
 					fontSize : 18,
@@ -25,9 +25,11 @@ module.exports = function(args) {
 			}));
 		}
 		if (item.image) {
+			var url = 'https://raw.githubusercontent.com/AppWerft/Hafenerlebnisroute/master/hafen/'+item.image;
+			console.log(url);
 			self.children[0].add(Ti.UI.createImageView({
-				top : 5,
-				image : item.image,
+				top : 10,
+				image : url,
 				width : Ti.UI.FILL,
 				height : 'auto'
 			}));
@@ -37,7 +39,7 @@ module.exports = function(args) {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hafenerlebnistour');
 		АктйонБар.setSubtitle('Alter Elbtunnel – Finkenwerder');
-		АктйонБар.setBackgroundColor('#777');
+		АктйонБар.setBackgroundColor('#f00');
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {
