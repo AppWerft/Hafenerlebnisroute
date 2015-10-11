@@ -1,6 +1,8 @@
 var touren = [{
 	title : "Alter Elbtunnel – Finkenwerder",
-	dist : 18.8
+	dist : 18.8,
+	itemId : 'elbtunnelfinkenwerder',
+	sub : true
 }, {
 	title : "Alter Elbtunnel – Bubendey",
 	dist : 17.8
@@ -37,6 +39,8 @@ module.exports = function() {
 			var row = Ti.UI.createTableViewRow({
 				height : Ti.UI.SIZE,
 				layout : 'vertical',
+				hasChild : t.sub ? true : false,
+				itemId: t.itemId,
 				backgroundColor : 'white'
 			});
 			row.add(Ti.UI.createLabel({
@@ -53,7 +57,7 @@ module.exports = function() {
 				text : 'Länge: ' + t.dist + ' km',
 				left : 10,
 				top : 10,
-				bottom:10,
+				bottom : 10,
 				font : {
 					fontSize : 16,
 					fontFamily : 'Aller'
@@ -64,7 +68,12 @@ module.exports = function() {
 		}),
 		height : Ti.UI.FILL
 	});
-
+	self.list.addEventListener('click', function(_e) {
+		if (_e.rowData.hasChild == true)
+			require('ui/tour.window')({
+				route : _e.rowData.itemId
+			}).open();
+	});
 	self.add(self.list);
 	return self;
 };
