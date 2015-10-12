@@ -109,5 +109,5 @@ exports.elbtunnelveddel = [{
 }, {
 	text : "Dort sehen wir auch gleich die Veddeler S-Bahn-Station, die uns wieder nach Hamburg bringt. Nette Cafés auf der Veddel laden zum Verweilen ein."
 }, {
-	image : "https://upload.wikimedia.org/wikipedia/commons/9/95/Wilhelmsburger_Platz_13,_14_%28Hamburg-Veddel%29.ajb.jpg"
+	image : "DSC_0000.png"
 }];
