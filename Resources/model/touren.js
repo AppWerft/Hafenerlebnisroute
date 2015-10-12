@@ -47,7 +47,7 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0036.png"
 }, {
-	text : "Wer jetzt schon einen gesunden Appetit hat, kann im Spanischen Kulturzentrum einkehren. Die Musik, die im Außenbereich abgespielt wird kann abschrrecken … Drinne ist es sehr gemütlich und es gibt sehr leckeres Essen – auch Scholle:"
+	text : "Wer jetzt schon einen gesunden Appetit hat, kann im Spanischen Kulturzentrum einkehren. Die Musik, die im Außenbereich abgespielt wird kann abschrecken … Drinne ist es sehr gemütlich und es gibt sehr leckeres Essen – auch Scholle:"
 }, {
 	image : "DSC_0028.png"
 }, {
