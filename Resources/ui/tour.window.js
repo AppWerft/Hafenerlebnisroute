@@ -54,7 +54,7 @@ module.exports = function(args) {
 	self.children[0].addEventListener('singletap', function(_e) {
 		if (_e.source.apiName == 'Ti.UI.ImageView') {
 			var zoom = require('ui/zoom.window')({
-				image  : _e.source.getImage(),
+				image  : _e.source.getImage().replace(/\.png/,'.JPG'),
 				title: 'Alter Elbtunnel – Finkenwerder'
 			}).open();
 		}
