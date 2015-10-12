@@ -3,7 +3,7 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0072.png"
 }, {
-	text : "Der Tunnel wurde 1911 eröffnet und galt damals als technische Sensation. Er verläuft 24 Meter unter dem Straßenniveau und ist 426,5 Meter lang. Er verhindert die Elbvertiefung und so können die großen Kreuzfahrtschiff  nur bei Hochwasser	 zur Hafencity fahren.\n\nAm Wochenende, an denen die Kraftfahrzeuge den Tunnel  nicht nutzen dürfen, wird der Lastenaufzug für die Räder freigegeben. Ansonsten muss man sich mit den Fußgängern den etwas kleineren Aufzu teilen."
+	text : "Der Tunnel wurde 1911 eröffnet und galt damals als technische Sensation. Er verläuft 24 Meter unter dem Straßenniveau und ist 426,5 Meter lang. Er verhindert die Elbvertiefung und so können die großen Kreuzfahrtschiff  nur bei Hochwasser	 zur Hafencity fahren.\n\nAm Wochenende, an denen die Kraftfahrzeuge den Tunnel  nicht nutzen dürfen, wird der Lastenaufzug für die Räder freigegeben. Ansonsten muss man sich mit den Fußgängern den etwas kleineren Aufzug teilen."
 }, {
 	image : "DSC_0067.png"
 }, {
