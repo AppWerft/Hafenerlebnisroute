@@ -40,7 +40,7 @@ module.exports = function(args) {
 
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hafenerlebnistour');
-		АктйонБар.setSubtitle('Alter Elbtunnel – Finkenwerder');
+		АктйонБар.setSubtitle(args.titletext);
 		АктйонБар.setBackgroundColor('#f00');
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();

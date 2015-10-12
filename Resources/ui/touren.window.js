@@ -6,10 +6,13 @@ var touren = [{
 }, {
 	title : "Alter Elbtunnel – Bubendey",
 	itemId : 'elbtunnelfinkenwerder',
-	dist : 17.8
+	dist : 17.8,
+	sub : true
 }, {
 	title : "Alter Elbtunnel – Veddel",
-	dist : 5.4
+	dist : 5.4,
+	sub : true,
+	itemId : "elbtunnelveddel"
 }, {
 	title : "Veddel – Finkenwerder",
 	dist : 17.1
@@ -42,6 +45,7 @@ module.exports = function() {
 					layout : 'vertical',
 					hasChild : t.sub ? true : false,
 					itemId : t.itemId,
+					titletext : t.title,
 					backgroundColor : 'white'
 				});
 				row.add(Ti.UI.createLabel({
