@@ -2,7 +2,7 @@ module.exports = function(args) {
 	console.log(args);
 	var options = arguments[0] || {};
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'white'
+		backgroundColor : 'gray'
 	});
 	var data = require('model/touren')[args.route];
 	console.log(data);
@@ -54,7 +54,7 @@ module.exports = function(args) {
 	self.children[0].addEventListener('singletap', function(_e) {
 		if (_e.source.apiName == 'Ti.UI.ImageView') {
 			var zoom = require('ui/zoom.window')({
-				image  : _e.source.getImage().replace(/\.png/,'.jpg'),
+				image  : _e.source.getImage().replace(/\.png$/,'.JPG'),
 				title: 'Alter Elbtunnel – Finkenwerder'
 			}).open();
 		}

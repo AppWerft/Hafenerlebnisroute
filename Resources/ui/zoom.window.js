@@ -6,16 +6,18 @@ Module = function(args) {
 		fullscreen : false,
 		backgroundColor : '#f8f8f8'
 	});
+	self.gallery = TouchGallery.createTouchGallery({
+		height : Ti.UI.FILL,
+		width : Ti.UI.FILL,
+		left : 0,
+		right : 0,
+		bottom : 0,
+		top : 0
+	});
+	self.add(self.gallery);
 	self.addEventListener("open", function() {
-		self.gallery = TouchGallery.createTouchGallery({
-			top : 0,
-			images : [args.image],
-			height : Ti.UI.FILL,
-			width : Ti.UI.FILL,
-		});
-		self.gallery.setImages([args.image,args.image]);
+		self.gallery.setImages([args.image, args.image]);
 		console.log([args.image]);
-		self.add(self.gallery);
 		var activity = self.getActivity();
 		if (activity && activity.actionBar) {
 			actionbar = activity.actionBar;
@@ -28,6 +30,5 @@ Module = function(args) {
 	});
 	return self;
 };
-
 
 module.exports = Module;
