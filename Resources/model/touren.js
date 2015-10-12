@@ -25,6 +25,8 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0056.png"
 }, {
+	text : "Inmitten des Wasserlaufes, unter der Argentinienbrücke steht auf einem Ponton ein goldenes Kalb. Die Künstlerin Elisabeth Richnow (Jahrgang 1958) hat dieses Symbol für den falschen Tanz um Reichtum und Macht."
+}, {
 	image : "DSC_0053.png"
 }, {
 	text : "Um auf die nächste Seite zu kömmen, muss dieser Tunnel genutzt werden. Er befindet sich rechts vom Fahrrad."
@@ -51,5 +53,9 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0028.png"
 }, {
-	text : "Nach eventueller Stärkung geht es weiter Richtung Süden. Nach einem Kilometer überqueren wir die Rethe. Das ist eine Wassersraße, die Köhlbrand und Reiherstieg verbindet. Die 1934 gebaute Rethe-Hubbrücke wird zur Zeit durch eine Klappbrücke ersetzt. Und da Hamburg die Stadt mit den meisten Superlativen ist (auch das ist wieder ein Superlativ), ist diese Brücke die größte Klappbrücke Europas.\n\nAuf der anderen Seite der Brücke fahren wir auf dem rechten Fahrweg weiter und lassen die großen Chemietanks rechts liegen. Kurz vor der Abbiegung zur Kattwykbrücke queren wir schrägverlaufenden Bahnschienen."
+	text : "Nach eventueller iberischer Stärkung geht es weiter Richtung Süden. Nach einem Kilometer überqueren wir die Rethe. Das ist eine Wassersraße, die Köhlbrand und Reiherstieg verbindet. Die 1934 gebaute Rethe-Hubbrücke wird zur Zeit durch eine Klappbrücke ersetzt. Und da Hamburg die Stadt mit den meisten Superlativen ist (auch das ist wieder ein Superlativ), ist diese Brücke die größte Klappbrücke Europas.\n\nAuf der anderen Seite der Brücke fahren wir auf dem rechten Fahrweg weiter und lassen die großen Chemietanks rechts liegen. Kurz vor der Abbiegung zur Kattwykbrücke queren wir schrägverlaufenden Bahnschienen."
+}, {
+	image : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Kattwyk-P1010772.JPG"
+}, {
+	text : "Auch die Kattwykbrücke ist die größte Hubbrücke Europas. Sie verbindet Moorburg mit der größten Flußinsel Europas – Wilhemlsburg. Sie wird zu Beginn der geraden Stunden für ca. 15 Minuten für den Landverkehr gesperrt. Dann können Schiffe passieren. "
 }];

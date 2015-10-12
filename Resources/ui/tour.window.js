@@ -2,7 +2,7 @@ module.exports = function(args) {
 	console.log(args);
 	var options = arguments[0] || {};
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'gray'
+		backgroundColor : 'white'
 	});
 	var data = require('model/touren')[args.route];
 	console.log(data);
@@ -25,7 +25,7 @@ module.exports = function(args) {
 			}));
 		}
 		if (item.image) {
-			var url = 'https://raw.githubusercontent.com/AppWerft/Hafenerlebnisroute/master/hafen/' + item.image;
+			var url = (item.image.length < 16) ? 'https://raw.githubusercontent.com/AppWerft/Hafenerlebnisroute/master/hafen/' + item.image : item.image;
 			console.log(url);
 			self.children[0].add(Ti.UI.createImageView({
 				top : 10,
@@ -54,8 +54,8 @@ module.exports = function(args) {
 	self.children[0].addEventListener('singletap', function(_e) {
 		if (_e.source.apiName == 'Ti.UI.ImageView') {
 			var zoom = require('ui/zoom.window')({
-				image  : _e.source.getImage().replace(/\.png$/,'.JPG'),
-				title: 'Alter Elbtunnel – Finkenwerder'
+				image : _e.source.getImage().replace(/\.png$/, '.jpg'),
+				title : 'Alter Elbtunnel – Finkenwerder'
 			}).open();
 		}
 	});
