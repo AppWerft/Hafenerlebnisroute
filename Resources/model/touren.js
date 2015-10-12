@@ -58,4 +58,20 @@ exports.elbtunnelfinkenwerder = [{
 	image : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Kattwyk-P1010772.JPG"
 }, {
 	text : "Auch die Kattwykbrücke ist die größte Hubbrücke Europas. Sie verbindet Moorburg mit der größten Flußinsel Europas – Wilhelmsburg. Sie wird zu Beginn der geraden Stunden für ca. 15 Minuten für den Landverkehr gesperrt. Dann können wie auf obigem Bild Schiffe passieren. "
-},{text:"Gleich hinter der Brücke wenden wir uns nach rechts und fahren das Ufer des Köhlbrands entlang (hamburgisch: „längs“)."}];
+}, {
+	text : "Gleich hinter der Brücke wenden wir uns nach rechts und fahren das Ufer des Köhlbrands entlang (hamburgisch: „längs“)."
+}, {
+	image : "https://upload.wikimedia.org/wikipedia/commons/9/9b/2013-06-08_Projekt_Hei%C3%9Fluftballon_DSCF0867.jpg"
+}, {
+	text : "Links lassen wir den Moorburger Berg liegen, der aus dem Hafenbeckenaushub für das Altenwerder Terminal (rechts) aufgeschüttet wurde.\n\nAltenwerder war ein kleines Dorf im Hafengebiet, von dem heute nur noch die Kirche und der Friedhof erhalten ist. Zu der Kirche fahren wir jetzt"
+}, {
+	text : "Am Ende des Weges sehen wir ein Brachland, dort fahren wir rechts. Linker Hand erscheint ein kleiner See. Am Ende des Sees beginnt nach links ein kleiner Weg durchs Grüne, auf dessen Mitte eine Holzbank mit Blick auf den See steht. Jetzt fahren wir ca. 10 Meter zurück und schieben das Rad nach unten. Dort beginnt ein Weg, der rechts von einem Bach gesäumt wird. Er führt direkt zur Altenwerder Kirche. Falls es jetzt Herbst ist, hängen an den vielen verlassenen Streuobstbäumen Äpfel und Renekloden."
+}, {
+	image : "http://stiftung-ausgleich-altenwerder.de/wp-content/uploads/2010/08/IMG_1058-e1280755916305.jpg"
+}, {
+	text : "Leider ist die Kirche oft geschlossen, weil der Küster nicht immer zugegen sein kann. Vor der Kirche geht es nach rechts an den Hochzeitsbäumen vorbei zu einer langgezogenen Straße, die uns über die Bahnstrecke führt. Nächstes Ziel ist die Raststätte, die sich hinter der Autobahnunterführung rechter Hand befindet. Dieser Autohof hat 7x24 geöffnet und bietet Kurzweil und Imbiss, der speziell auf Berufskraftfahrer zugeschnitten ist. Die Wirtin Bärbel Uliczka war übrigens die raucherfreundliche Initiatorin, die vor einigen Jahren sehr engagiert gegen das Rauchverbot in Kneipen kämpfte."
+}, {
+	image : "http://www.trucker-treff.com/s/cc_images/cache_2423240960.jpg"
+}, {
+	text : "Oben auf der Brücke sind viele Wegweiser angebracht: einer davon zeigt uns an, wie wir nach Finkenwerder kommen und wieviele Kilometer das noch sind. Alternativ kann man auch der Ausschilderung nach Bubendey folgen. Diese Strecke ist 1 km kürzer und die Fähre 62 hält dort auch. Waltershof hat auch einen Fähranleger, der allerdings nur werktags angefahren wird und auch teilweise nur alle zwei Stunden bedient wird."
+}];

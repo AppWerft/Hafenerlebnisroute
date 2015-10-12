@@ -5,6 +5,7 @@ var touren = [{
 	sub : true
 }, {
 	title : "Alter Elbtunnel – Bubendey",
+	itemId : 'elbtunnelfinkenwerder',
 	dist : 17.8
 }, {
 	title : "Alter Elbtunnel – Veddel",
