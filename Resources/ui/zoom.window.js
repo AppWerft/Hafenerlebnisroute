@@ -16,7 +16,7 @@ Module = function(args) {
 	});
 	self.add(self.gallery);
 	self.addEventListener("open", function() {
-		self.gallery.setImages([args.image, args.image]);
+		self.gallery.setImages([args.image]);
 		console.log([args.image]);
 		var activity = self.getActivity();
 		if (activity && activity.actionBar) {

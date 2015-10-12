@@ -57,5 +57,5 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Kattwyk-P1010772.JPG"
 }, {
-	text : "Auch die Kattwykbrücke ist die größte Hubbrücke Europas. Sie verbindet Moorburg mit der größten Flußinsel Europas – Wilhemlsburg. Sie wird zu Beginn der geraden Stunden für ca. 15 Minuten für den Landverkehr gesperrt. Dann können Schiffe passieren. "
+	text : "Auch die Kattwykbrücke ist die größte Hubbrücke Europas. Sie verbindet Moorburg mit der größten Flußinsel Europas – Wilhemlsburg. Sie wird zu Beginn der geraden Stunden für ca. 15 Minuten für den Landverkehr gesperrt. Dann können wie auf obigem Bild Schiffe passieren. "
 }];
