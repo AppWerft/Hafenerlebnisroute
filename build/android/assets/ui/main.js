@@ -1,1 +1,1 @@
-module.exports=function(){var e=Ti.UI.createTabGroup({fullscreen:!1,swipeable:!0});return e.addEventListener("open",require("ui/actionbar")),e.addTab(Ti.UI.createTab({window:require("ui/map.window")(),title:"Radlerkarte"})),e.addTab(Ti.UI.createTab({window:require("ui/touren.window")(),title:"Touren"})),e.addTab(Ti.UI.createTab({window:require("ui/tide.window")(),title:"Tideplan"})),e.addTab(Ti.UI.createTab({window:require("ui/hafentv.window")(),title:"HafenTV"})),e};
+/Users/fuerst/Documents/Appcelerator_Studio_Workspace/Hafenerlebnisroute/Resources/ui/main.js

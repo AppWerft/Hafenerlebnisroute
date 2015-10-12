@@ -25,11 +25,12 @@ module.exports = function(args) {
 			}));
 		}
 		if (item.image) {
-			var url = 'https://raw.githubusercontent.com/AppWerft/Hafenerlebnisroute/master/hafen/'+item.image;
+			var url = 'https://raw.githubusercontent.com/AppWerft/Hafenerlebnisroute/master/hafen/' + item.image;
 			console.log(url);
 			self.children[0].add(Ti.UI.createImageView({
 				top : 10,
 				image : url,
+				defaultImage : '/assets/defaultimage.png',
 				width : Ti.UI.FILL,
 				height : 'auto'
 			}));
@@ -49,6 +50,14 @@ module.exports = function(args) {
 			};
 		}
 
+	});
+	self.children[0].addEventListener('singletap', function(_e) {
+		if (_e.source.apiName == 'Ti.UI.ImageView') {
+			var zoom = require('ui/zoom.window')({
+				image  : _e.source.getImage(),
+				title: 'Alter Elbtunnel – Finkenwerder'
+			}).open();
+		}
 	});
 	return self;
 };

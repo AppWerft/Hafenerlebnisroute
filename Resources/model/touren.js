@@ -1,9 +1,9 @@
 exports.elbtunnelfinkenwerder = [{
-	text : "Die Radtour beginnt mit der Unterquerung der Elbe. Der alte Elbtunnnel ist an den Landungsbrücken gelegen und deshalb mit der S1 oder U3 gut zu erreichen."
+	text : "Die Radtour beginnt in Steinwerder. Das ist der Ort auf der anderen Seite der Elbe. Er liegt am linken Elbufer –  den Landungsbrücken gegenüberliegend. Unter der Woche verkehrt auch eine Fähre, aber am Wochenende müssen wir wohl den alten Elbtunnel nutzen. Der Elbtunneleingang auf der St.Pauli-Seite ist an den Landungsbrücken gelegen und deshalb mit der S1 oder U3 gut zu erreichen."
 }, {
 	image : "DSC_0072.png"
 }, {
-	text : "Am Wochenende, an denen die Kraftfahrzeuge den Tunnel  nicht nutzen dürfen, wird der Lastenaufzug für die Räder freigegeben. Ansonsten muss man sich mit den Fußgängern den etwas kleineren Aufzu teilen."
+	text : "Der Tunnel wurde 1911 eröffnet und galt damals als technische Sensation. Er verläuft 24 Meter unter dem Straßenniveau und ist 426,5 Meter lang. Er verhindert die Elbvertiefung und so können die großen Kreuzfahrtschiff  nur bei Hochwasser	 zur Hafencity fahren.\n\nAm Wochenende, an denen die Kraftfahrzeuge den Tunnel  nicht nutzen dürfen, wird der Lastenaufzug für die Räder freigegeben. Ansonsten muss man sich mit den Fußgängern den etwas kleineren Aufzu teilen."
 }, {
 	image : "DSC_0067.png"
 }, {
@@ -51,5 +51,5 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0028.png"
 }, {
-	text : "Nach eventueller Stärkung geht es weiter Richtung Süden."
+	text : "Nach eventueller Stärkung geht es weiter Richtung Süden. Nach einem Kilometer überqueren wir die Rethe. Das ist eine Wassersraße, die Köhlbrand und Reiherstieg verbindet. Die 1934 gebaute Rethe-Hubbrücke wird zur Zeit durch eine Klappbrücke ersetzt. Und da Hamburg die Stadt mit den meisten Superlativen ist (auch das ist wieder ein Superlativ), ist diese Brücke die größte Klappbrücke Europas."
 }];

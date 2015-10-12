@@ -1,1 +1,1 @@
-var Moment=require("vendor/moment");module.exports=function(e,t){var i=require("vendor/moonphases").get(Moment().add(e,"d")),n=Ti.UI.createView({height:18,backgroundColor:"#092B55"});return n.add(Ti.UI.createLabel({text:t,textAlign:"left",left:40,font:{fontSize:14,fontFamily:"Aller"},color:"white"})),n.add(Ti.UI.createImageView({image:"/assets/moon/moon"+Math.round(i.age)+".png",left:0,height:Ti.UI.FILL,width:18})),n};
+/Users/fuerst/Documents/Appcelerator_Studio_Workspace/Hafenerlebnisroute/Resources/ui/tide.headerview.js

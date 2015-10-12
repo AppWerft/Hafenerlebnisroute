@@ -65,7 +65,7 @@
         <module platform="android">com.wwl.canvas</module>
         <module platform="android">com.rkam.swiperefreshlayout</module>
         <module platform="android">com.mykingdom.mupdf</module>
-        <module platform="android">de.manumaticx.crouton</module>
+        <module platform="android">com.gbaldera.titouchgallery</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
