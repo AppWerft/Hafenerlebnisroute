@@ -101,7 +101,13 @@ exports.elbtunnelveddel = [{
 }, {
 	text : "Nach dem kleinen Abstecher zur Fährstation fahren wir über die Brücke und direkt danach überqueren wor die Straße, um auf die Klütjenfelder Straße abzubiegen. Auf ihr geht es angenehm im Bogen nach links. Die nächste Brücke überquert den Veddelkanal. Die Straße zur linken Insel führt auch nach Veddel, wir aber bleiben auf der Hauptstraße und biegen die nächste Straße nach links ab. Das ist die Stelle, an der sich weiland die Zollgrenze befand."
 }, {
-	image : "DSC_0073.jpg"
+	image : "DSC_0073.png"
 }, {
-	text : " Nun können wir (hoffentlich mit Rückenwind) am Spreehafen entlang bis Veddel radeln. Dort sehen wir auch gleich die  S-Bahn-Station, die uns wieder nach Hamburg bringt."
+	text : "Nun können wir (hoffentlich mit Rückenwind) am Spreehafen entlang bis Veddel radeln."
+}, {
+	image : "http://www.visuellekonzepte.de/_temp/spreehafen/content/images/large/UMertens_120308_029.jpg"
+}, {
+	text : "Dort sehen wir auch gleich die Veddeler S-Bahn-Station, die uns wieder nach Hamburg bringt. Nette Cafés auf der Veddel laden zum Verweilen ein."
+}, {
+	image : "https://upload.wikimedia.org/wikipedia/commons/9/95/Wilhelmsburger_Platz_13,_14_%28Hamburg-Veddel%29.ajb.jpg"
 }];
