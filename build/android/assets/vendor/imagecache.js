@@ -1,0 +1,1 @@
+module.exports=function(e,t){if(e&&t){var i=Ti.Utils.md5HexDigest(e)+".png",n=Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,i);if(1==n.exists())console.log(n.nativePath),t.image=n.nativePath;else{var a=Ti.Network.createHTTPClient({onload:function(){200==this.status&&(n.write(this.responseData),t.setImage(n.nativePath))}});a.open("GET",e),a.send()}}};

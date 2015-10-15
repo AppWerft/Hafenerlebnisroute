@@ -79,7 +79,7 @@ exports.star = [{
 	ll : [53.5412419, 9.9702500],
 	title : "Steinwerder"
 }, {
-	ll : [53.5075656, 9.9763440],
+	ll : [53.5043624,9.9715553],
 	title : "Reiherstiegknie"
 }, {
 	ll : [53.4728409, 9.9889611],
@@ -128,7 +128,7 @@ exports.red = [{
 	title : "Altenwerder Kirche"
 }, {
 	ll : [53.5039158, 9.9666022],
-	title : "Rethe(hub)brücke"
+	title : "Rethehubbrücke"
 }, {
 	ll : [53.5024608, 9.9682330],
 	title : "Rethespeicher"
@@ -156,14 +156,14 @@ exports.red = [{
 exports.besteck = [{
 	ll : [53.5113355, 9.9672996],
 	title : 'Spanisches Freizeitheim',
-	subtitle : "Geöffnet Freitag-Sonntag,\nAngebot:\nleckere, warme Speisen, auch Fisch"
+	subtitle : "Geöffnet Freitag-Sonntag\nWarmer Speisen"
 }, {
 	ll : [53.5130007, 9.9135989],
 	title : 'Shell Autohof',
 	subtitle : "7x24 geöffnet, Truckerträume …"
 }, {
 	ll : [53.4897335, 9.9364728],
-	title : "Restaurant Wasserturm"
+	title : "Restaurant Wasserturm\nMediterran inspirierte Küche"
 }, {
 	ll : [53.4621113,10.0619672],
 	title : "Elbaue-Tidezentrum",

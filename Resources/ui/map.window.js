@@ -22,7 +22,7 @@ module.exports = function() {
 				}).open();
 				self.map.deselectAnnotation(self.map.dummyAnnotation);
 				_e.annotation.wiki = undefined;
-				
+
 			}
 		} else if (_e.clicksource == 'polygon') {
 			self.map.dummyAnnotation.setLatitude(_e.source.center.y);
@@ -124,10 +124,8 @@ module.exports = function() {
 			}
 		}
 	};
-	self.add(self.map);
 	self.addEventListener('open', function() {
-
+		self.add(self.map);
 	});
-
 	return self;
 };
