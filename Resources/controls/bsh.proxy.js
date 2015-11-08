@@ -12,10 +12,11 @@ var getDistance = function(lat1, lon1, lat2, lon2) {
 var splitIntoDays = function(sets) {
 	var days = [];
 	var today = Moment().startOf('day');
-	var wds = ['Sonntag','Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+	var wds = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 	for (var i = 0; i < sets.length; i++) {
 		var set = sets[i];
-		var ndx, label;
+		var ndx,
+		    label;
 		ndx = Moment.unix(set.timestamp).diff(today, 'days');
 		if (ndx < 3) {
 			label = ['Heute', 'Morgen', 'Übermorgen'][ndx];
@@ -38,17 +39,17 @@ var splitIntoDays = function(sets) {
 };
 var getCurrent = function(sets) {
 	/*
-	if (sets[0].level) {
-		var min = 99999;
-		var max = 0;
-		// Extrema:
-		for (var i = 0; i < sets.length; i++) {
-			if (min < sets[i].level)
-				min = sets[i].level;
-			if (max > sets[i].level)
-				max = sets[i].level;
-		}
-	}*/
+	 if (sets[0].level) {
+	 var min = 99999;
+	 var max = 0;
+	 // Extrema:
+	 for (var i = 0; i < sets.length; i++) {
+	 if (min < sets[i].level)
+	 min = sets[i].level;
+	 if (max > sets[i].level)
+	 max = sets[i].level;
+	 }
+	 }*/
 	var set = {
 		prev : {},
 		next : {},
@@ -73,18 +74,16 @@ var getCurrent = function(sets) {
 	}
 	set.diff.time = set.next.timestamp - set.prev.timestamp;
 	set.current.timeratio = (Moment().unix() - set.prev.timestamp) / set.diff.time;
-	console.log(set);
 	try {
 		set.diff.level = parseFloat(set.next.level, 10) - parseFloat(set.prev.level, 10);
 	} catch(E) {
-		console.log('Error 77: ' + E);
+		console.log( E);
 	}
 	if (set.diff.level != 0 && !isNaN(set.diff.level)) {
 		/* Berechnung des aktuellen Pegels */
 		// Gesamthub:
 		var amp = Math.abs(parseFloat(set.prev.level, 10) - parseFloat(set.next.level, 10));
 		var cosinus = Math.cos(set.current.timeratio * Math.PI);
-		//console.log(set.diff.level + ' a=' + amp + ' c='+ cosinus);
 		if (set.diff.level < 0) {
 			// ablaufend
 			var level = parseFloat(set.next.level, 10);
@@ -106,7 +105,6 @@ var getCurrent = function(sets) {
 /*     Module start    */
 var TideAdapter = function() {
 	this.locations = require('model/locations').locations;
-	console.log(this.locations);
 	var db = Ti.Database.open(Ti.App.Properties.getString('dbname'));
 	db.execute('CREATE TABLE IF NOT EXISTS tides (id TEXT, ts TEXT,ty TEXT,level TEXT)');
 	db.close();
@@ -114,11 +112,8 @@ var TideAdapter = function() {
 	return this;
 };
 
-
-
 TideAdapter.prototype = {
 	loadStations : function(_smartloading, _callbacks) {
-		console.log('Info: START data mirroring \==============================================');
 		var that = this;
 		if (_smartloading) {
 			if (this.getStationsStatus().days == Ti.App.Properties.getString('DAYS')) {
@@ -153,7 +148,8 @@ TideAdapter.prototype = {
 					db.execute('DROP TABlE IF EXISTS tides');
 					db.execute('CREATE TABLE IF NOT EXISTS tides (id TEXT, ts TEXT,ty TEXT,level TEXT)');
 					db.execute("BEGIN IMMEDIATE TRANSACTION");
-					for (var s = 0, len = stations.length; s < len; s++) {
+					for (var s = 0,
+					    len = stations.length; s < len; s++) {
 						var id = stations[s].id;
 						var val = stations[s].val;
 						for (var i = 0; i < val.length; i++) {
@@ -225,13 +221,13 @@ TideAdapter.prototype = {
 		//skndiff = 0;
 		var db = Ti.Database.open(Ti.App.Properties.getString('dbname'));
 		var resultSet = db.execute('SELECT * FROM tides WHERE id=? ORDER by ts LIMIT 20', _id);
-		var tideverlauf = [];	
+		var tideverlauf = [];
 		while (resultSet.isValidRow()) {
 			var nn = parseFloat(resultSet.fieldByName('level') - skndiff);
 			var kn = parseFloat(resultSet.fieldByName('level'));
 			var level = (this.modus == 'nn') ? nn : kn;
 			tideverlauf.push({
-				timestamp : parseInt(resultSet.fieldByName('ts'),10),
+				timestamp : parseInt(resultSet.fieldByName('ts'), 10),
 				level : (isNaN(level)) ? null : level,
 				direction : resultSet.fieldByName('ty'),
 			});
@@ -239,7 +235,7 @@ TideAdapter.prototype = {
 		}
 		resultSet.close();
 		db.close();
-		
+
 		if (tideverlauf.length > 0) {
 			var set = getCurrent(tideverlauf);
 			var res = {
@@ -267,13 +263,14 @@ TideAdapter.prototype = {
 	},
 
 	getChartData : function(_id) {
-		var start =new Date().getTime();
+		var start = new Date().getTime();
 		var counter = 0;
 		var tides = [];
 		var now = Moment();
 		var db = Ti.Database.open(Ti.App.Properties.getString('dbname'));
 		var resultSet = db.execute('SELECT * FROM tides WHERE id=? ORDER by ts', _id);
 		var tides = [];
+		/* in tides we collect datafrom DB */
 		while (resultSet.isValidRow()) {
 			var level = parseFloat(resultSet.fieldByName('level'));
 			tides.push({
@@ -300,7 +297,6 @@ TideAdapter.prototype = {
 				chartvalues.push(interpolatedvalues[j]);
 			}
 		}
-		console.log('Info: calculating of chart: ' + (new Date().getTime()-start));
 		return chartvalues;
 	}
 };
@@ -322,8 +318,10 @@ var getInterpolatedTideValues = function(options) {
 		? y1 + amp * (1 - ratio)//
 		: y2 + amp * (1 + ratio);
 		if (secondsofnow < timestamp) {
-			
-			res.push(value);
+			res.push({
+				level : value,
+				time: timestamp
+			});
 		}
 	}
 	return res;

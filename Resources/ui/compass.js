@@ -15,8 +15,8 @@ var Widget = function(args) {
 				φ : _e.coords.latitude,
 				λ : _e.coords.longitude
 			};
-			console.log(_e);
-			that.mylocprecision =0;
+			console.log(_e.coords.accuracy);
+			that.mylocprecision = 0;
 		}
 	};
 	function onHeading(_e) {
@@ -30,18 +30,24 @@ var Widget = function(args) {
 			that.lastheading = heading;
 		}
 	}
+
+
 	this.view = Ti.UI.createView({
 		backgroundColor : 'transparent',
 		touchEnabled : false
 	});
-	this.arrowView = Ti.UI.createLabel({
+	this.arrowView = Ti.UI.createImageView({
 		text : '⬆',
 		color : '#092B55',
-		opacity : 0,
+		opacity : 0,zIndex:99,
 		touchEnabled : false,
 		font : {
 			fontSize : 290
-		}
+		},
+		image : '/assets/pfeil.png',
+		width : 300,
+		height : 200
+
 	});
 	this.titleView = Ti.UI.createLabel({
 		text : args.name,
@@ -74,14 +80,14 @@ var Widget = function(args) {
 	this.view.add(this.distanceView);
 	this.view.start = function() {
 		that.arrowView.animate({
-			opacity : 0.2,
+			opacity : 0.3,
 			duration : 1800
 		});
 		if (Ti.Geolocation.locationServicesEnabled) {
 			Ti.Geolocation.Android.addLocationProvider(Ti.Geolocation.Android.createLocationProvider({
 				name : Ti.Geolocation.PROVIDER_GPS,
-				minUpdateDistance : 0.0,
-				minUpdateTime : 0
+				minUpdateDistance : 10.0,
+				minUpdateTime : 10
 			}));
 			Ti.Geolocation.Android.manualMode = true;
 			Ti.Geolocation.addEventListener('heading', onHeading);

@@ -43,7 +43,7 @@ module.exports = function() {
 
 
 	self.map = Map.createView({
-		userLocation : true,
+		userLocation : Ti.Geolocation.locationServicesEnabled ? true:false,
 		region : {
 			latitude : 53.51,
 			longitude : 9.95,
