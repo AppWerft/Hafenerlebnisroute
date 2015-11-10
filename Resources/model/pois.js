@@ -59,6 +59,10 @@ exports.ferries = [{
 }];
 
 exports.star = [{
+	ll : [53.5340752, 9.9901699],
+	title : "Afrikahöft",
+	subtitle : "Blick auf Hafencity"
+}, {
 	ll : [53.5391370, 9.9244565],
 	title : "Elbtunnel",
 	subtitle : 'nur eine Röhre begehbar.\nAm Wochenende können Radfahrer auch die großen Lastenaufzüge nutzen'
@@ -79,7 +83,7 @@ exports.star = [{
 	ll : [53.5412419, 9.9702500],
 	title : "Steinwerder"
 }, {
-	ll : [53.5043624,9.9715553],
+	ll : [53.5043624, 9.9715553],
 	title : "Reiherstiegknie"
 }, {
 	ll : [53.4728409, 9.9889611],
@@ -165,7 +169,7 @@ exports.besteck = [{
 	ll : [53.4897335, 9.9364728],
 	title : "Restaurant Wasserturm\nMediterran inspirierte Küche"
 }, {
-	ll : [53.4621113,10.0619672],
+	ll : [53.4621113, 10.0619672],
 	title : "Elbaue-Tidezentrum",
 	subtitle : "geöffnet: Samstag/Sonntag\nKaffee und Kuchen"
 }];

@@ -18,12 +18,12 @@ var startYT = function(_e) {
 
 module.exports = function() {
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'white'
+		backgroundColor : '#092B55'
 	});
 	self.add(Ti.UI.createImageView({
 		image : '/assets/pano.png',
-		top : 0,
-		width :1840,
+		top : 120,
+		width : 1840,
 		height : 700
 	}));
 	self.children[0].animate({
@@ -56,11 +56,15 @@ module.exports = function() {
 	self.swipeRefreshContainer = swipeRefreshModule.createSwipeRefresh({
 		view : self.list,
 		height : Ti.UI.FILL,
-		width : Ti.UI.FILL
+		width : Ti.UI.FILL,
+		top : 125
 	});
 	self.add(self.swipeRefreshContainer);
 	self.swipeRefreshContainer.addEventListener('refreshing', updateList);
 	self.addEventListener('focus', updateList);
 	self.list.addEventListener('singletap', startYT);
+	Ti.Gesture.addEventListener('orientationchange', function() {
+		self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
+	});
 	return self;
 };

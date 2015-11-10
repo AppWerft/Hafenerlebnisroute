@@ -19,10 +19,12 @@ var touren = [{
 }];
 
 module.exports = function() {
-	var self = Ti.UI.createWindow();
+	var self = Ti.UI.createWindow({
+		backgroundColor : '#092B55'
+	});
 	self.add(Ti.UI.createImageView({
 		image : '/assets/pano.png',
-		top : 0,
+		top : 120,
 		width : 1840,
 		height : 700
 	}));
@@ -32,7 +34,7 @@ module.exports = function() {
 	});
 	self.addEventListener('open', function() {
 		self.list = Ti.UI.createTableView({
-			top : 0,
+			top : 120,
 			bottom : 0,
 			data : touren.map(function(t) {
 				var row = Ti.UI.createTableViewRow({
@@ -75,6 +77,9 @@ module.exports = function() {
 				}).open();
 		});
 		self.add(self.list);
+	});
+	Ti.Gesture.addEventListener('orientationchange', function() {
+		self.list && self.list.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
 	});
 	return self;
 };

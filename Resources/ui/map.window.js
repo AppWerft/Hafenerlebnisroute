@@ -40,16 +40,15 @@ module.exports = function() {
 			self.map.selectAnnotation(self.map.dummyAnnotation);
 		}
 	}
-
-
 	self.map = Map.createView({
-		userLocation : Ti.Geolocation.locationServicesEnabled ? true:false,
+		userLocation : Ti.Geolocation.locationServicesEnabled ? true : false,
 		region : {
 			latitude : 53.51,
 			longitude : 9.95,
 			longitudeDelta : 0.1,
 			latitudeDelta : 0.1
 		},
+		top : 120,
 		enableZoomControls : false
 	});
 	self.map.dummyAnnotation = Map.createAnnotation({
@@ -59,7 +58,7 @@ module.exports = function() {
 	});
 	self.map.addAnnotation(self.map.dummyAnnotation);
 	self.map.addEventListener('click', handleMapClick);
-	self.mapOverlays = require('ui/map.overlays')();
+	//self.mapOverlays = require('ui/map.overlays')();
 
 	self.removeOverlay = function(options) {
 		if (options.name && !options.geojson) {
@@ -125,7 +124,12 @@ module.exports = function() {
 		}
 	};
 	self.addEventListener('open', function() {
+		console.log('Info: adding Ti.Map');
 		self.add(self.map);
 	});
+	Ti.Gesture.addEventListener('orientationchange', function() {
+		self.map && self.map.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
+	});
+	console.log('GSM='+ require('vendor/gms.test')());
 	return self;
 };

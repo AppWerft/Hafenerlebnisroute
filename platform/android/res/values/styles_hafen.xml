@@ -18,8 +18,11 @@
 -->
 
 <resources>
-
     <style name="Theme.Hafen" parent="@style/Theme.AppCompat">
+    	<item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+        
         <item name="actionBarItemBackground">@drawable/selectable_background_hafen</item>
         <item name="popupMenuStyle">@style/PopupMenu.Hafen</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Hafen</item>

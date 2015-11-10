@@ -27,7 +27,7 @@ module.exports = function() {
 	});
 	self.add(Ti.UI.createImageView({
 		image : '/assets/pano.png',
-		top : 0,
+		top : 120,
 		width : 1840,
 		height : 700
 	}));
@@ -36,7 +36,7 @@ module.exports = function() {
 		duration : 1500
 	});
 	var wasserstandView = require('ui/wasserstand').createView();
-
+	wasserstandView.top = 120;
 	var pin = null;
 	var hasLevel = false;
 	self.scheduler = Ti.UI.createTableView({
@@ -46,14 +46,13 @@ module.exports = function() {
 	});
 	self.swipeRefreshContainer = swipeRefreshModule.createSwipeRefresh({
 		view : self.scheduler,
-		top : 0,
+		top : 125,
 		bottom : 0,
 		height : Ti.UI.FILL,
 		width : Ti.UI.FILL
 	});
 	self.swipeRefreshContainer.addEventListener('refreshing', getPrediction);
 	self.scheduler.addEventListener('scroll', function() {
-		//hand.hide();
 	});
 	self.renderCanvas = function() {
 		console.log('Info: start rerendering of canvas');
@@ -122,8 +121,6 @@ module.exports = function() {
 					});
 					return section;
 				});
-				/* Tidekurve mit Canvas malen */
-				console.log('Info: will start renderCanvas');
 				self.renderCanvas();
 			},
 			onerror : function() {
@@ -172,7 +169,6 @@ module.exports = function() {
 			self.bubble.setLeft(x);
 			self.bubble.setBottom(y);
 		}
-
 	});
 	Ti.Android && self.addEventListener('focus', function() {
 		console.log('Info: tide window got focus');
@@ -185,6 +181,9 @@ module.exports = function() {
 			message : 'Gezeitendaten für St. Pauli vom Bundesamt für Seeschiffahrt und Hydrographie'
 		}).show();
 
+	});
+	Ti.Gesture.addEventListener('orientationchange', function() {
+		self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
 	});
 	self.add(wasserstandView);
 	return self;

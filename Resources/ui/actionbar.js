@@ -1,4 +1,5 @@
 var АктйонБар = require('com.alcoapps.actionbarextras');
+
 var MENUITEMS = [{
 	title : 'Aussichtspunkte',
 	name : 'aussicht',
@@ -7,14 +8,6 @@ var MENUITEMS = [{
 	title : 'Sehenswürdigkeiten',
 	name : 'sehens',
 	enabled : true
-}, {
-	title : 'Erlebnisroute',
-	name : 'erlebnis',
-	enabled : true
-}, {
-	title : 'Radnetz',
-	name : 'radnetz',
-	enabled : false
 }, {
 	title : 'Fährstellen',
 	name : 'faehre',
@@ -37,6 +30,8 @@ var MENUITEMS = [{
 	property : 'Terminal'
 }];
 
+
+
 module.exports = function(_event) {
 	var activity = _event.source.getActivity();
 	var mapwin = _event.source.tabs[0].window;
@@ -54,8 +49,21 @@ module.exports = function(_event) {
 			}
 			_event.source.setActiveTab(0);
 		}
-
-
+		menu.add({
+			title : 'Touren',
+			icon : Ti.App.Android.R.drawable.ic_action_radler,
+			itemId : 99,
+			showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS,
+		}).addEventListener("click", function() {
+			var routes = require('model/routes').getAllRouteNames();
+			var picker = require("yy.tidialogs").createMultiPicker({
+				title : "Hafentouren",
+				options : routes.all,
+				selected : routes.selected,
+				okButtonTitle : "OK",
+			});
+			picker.show();
+		});
 		MENUITEMS.forEach(function(item, itemId) {
 			menu.add({
 				title : item.title,
@@ -66,10 +74,9 @@ module.exports = function(_event) {
 			}).addEventListener("click", toggleOverlay);
 		});
 		var Map = require('ti.map');
-
 		var maptypeItem = menu.add({
 			title : 'Luftbild',
-			itemId : 99,
+			itemId : 98,
 			checkable : true,
 			checked : false,
 			showAsAction : Ti.Android.SHOW_AS_ACTION_NEVER,
@@ -79,16 +86,17 @@ module.exports = function(_event) {
 			mapwin.map.setMapType((maptypeItem.checked) ? Map.HYBRID_TYPE : Map.NORMAL_TYPE);
 		});
 	};
-	АктйонБар.setTitle('Hafenerlebnisroute');
+	АктйонБар.setTitle('Hafenradeln');
 	АктйонБар.setFont('Aller Bold');
+	АктйонБар.backgroundColor = '#444';
 	АктйонБар.setSubtitle('Hamburg');
 	if (activity) {
 		activity.onCreateOptionsMenu = handleCreateMenu;
 		activity.invalidateOptionsMenu();
 	} else
 		console.log('Warning: no activity');
-	MENUITEMS.forEach(function(item) {
+	/*MENUITEMS.forEach(function(item) {
 		if (item.enabled)
 			mapwin.addOverlay(item);
-	});
+	});*/
 };

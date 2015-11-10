@@ -2,11 +2,13 @@ module.exports = function(args) {
 	console.log(args);
 	var options = arguments[0] || {};
 	var self = Ti.UI.createWindow({
-		backgroundColor : 'white'
+		backgroundColor : '#092B55'
 	});
 	self.add(Ti.UI.createScrollView({
 		schrollType : 'vertical',
-		layout : 'vertical'
+		layout : 'vertical',
+		top : 70,
+		backgroundColor : 'white'
 	}));
 	self.addEventListener('open', function(_event) {
 		var data = require('model/touren')[args.route.itemId];
@@ -41,7 +43,7 @@ module.exports = function(args) {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hafenerlebnistour');
 		АктйонБар.setSubtitle(args.titletext);
-		АктйонБар.setBackgroundColor('#f00');
+		АктйонБар.setBackgroundColor('#444');
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {

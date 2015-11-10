@@ -1,26 +1,36 @@
 var Map = require('ti.map');
 
-module.exports = function() {
-	return {
-		radnetz : ['bunthaus','rossdamm', 'neuhof', 'bubendey', 'waltershof', 'almig', 'veddel', 'theater'].map(function(key) {
-			return Map.createRoute({
-				points : require('model/routes')[key].map(function(p) {
-					return {
-						latitude : p[0],
-						longitude : p[1]
-					};
-				}),
-				enabled : false,
-				color : '#F80009',
-				width : Ti.Platform.displayCaps.logicalDensityFactor * 5
-			});
+function createRouteView(points) {
+	return Map.createRoute({
+		points : points.map(function(p) {
+			return {
+				latitude : p[0],
+				longitude : p[1]
+			};
 		}),
-		erlebnis : [Map.createRoute({
-			points : require('model/routes').green,
-			color : '#090',
-			enabled : true,
-			width : Ti.Platform.displayCaps.logicalDensityFactor * 5
-		})],
+		color : '#090',
+		enabled : true,
+		width : Ti.Platform.displayCaps.logicalDensityFactor * 4
+	});
+}
+
+module.exports = function() {
+	var routeViews = {};
+	var enabledRoutegroups = [];
+	var routes = require('model/routes').getAllRoutes();
+	return;
+	var names = Object.getOwnPropertyNames(routes);
+	names.forEach(function(name){
+		if (routes[name].enabled) enabledRoutegroups.push(routes[name]);
+	});
+	enabledRoutegroups.forEach(function(routegroup) {
+		routegroup.polylines.forEach(function(polyline, ndx) {
+			console.log(polyline);
+			routeViews[routegroup.name] = createRouteView(polyline[ndx]);
+		});
+	});
+	console.log(routeViews);
+	return {
 		sehens : require('model/pois').red.map(function(p) {
 			return Map.createAnnotation({
 				latitude : p.ll[0],
@@ -37,7 +47,8 @@ module.exports = function() {
 				enabled : true,
 				image : '/images/star.png',
 				longitude : p.ll[1],
-				title : p.title
+				title : p.title,
+				subtitle : p.subtitle
 			});
 		}),
 		gastro : require('model/pois').besteck.map(function(p) {
@@ -45,13 +56,14 @@ module.exports = function() {
 				latitude : p.ll[0],
 				image : '/images/besteck.png',
 				longitude : p.ll[1],
-				title : p.title,subtitle : p.subtitle
+				title : p.title,
+				subtitle : p.subtitle
 			});
 		}),
 		faehre : require('model/pois').ferries.map(function(p) {
 			return Map.createAnnotation({
 				latitude : p.ll[0],
-					enabled : true,
+				enabled : true,
 				image : '/images/' + p.line + '.png',
 				longitude : p.ll[1],
 				rightButton : '/images/faehre.png',
