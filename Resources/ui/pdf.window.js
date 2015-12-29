@@ -1,7 +1,6 @@
 var getFromCache = function(_pdfurl, _onload) {
 	var pdffile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, Ti.Utils.md5HexDigest(_pdfurl) + '.pdf');
 	if (pdffile.exists()) {
-		console.log('Info:  pdf was alreadystored => displaying');
 		_onload({
 			path : pdffile,
 			file : Ti.Utils.md5HexDigest(_pdfurl)
@@ -20,14 +19,13 @@ var getFromCache = function(_pdfurl, _onload) {
 			},
 			ondatastream : function(_e) {
 				/*if (_progresswidget)
-					_progresswidget.progress.value = _e.progress;*/
+				 _progresswidget.progress.value = _e.progress;*/
 			}
 		});
 		xhr.open('GET', _pdfurl);
 		xhr.send(null);
 	}
 };
-
 
 module.exports = function() {
 	var options = arguments[0] || {};
@@ -36,35 +34,38 @@ module.exports = function() {
 	});
 	self.backgroundColor = 'white';
 	if (!Ti.Android) {
-		var webview = Ti.UI.createWebView({
+		self.documentview = Ti.UI.createWebView({
 			url : options.pdf,
-			borderRadius : 1
+			borderRadius : 1,
+			top : 120
 		});
-		self.container.add(webview);
+		self.add(self.documentview);
 	} else {
 		var READER_MODULE = require("com.mykingdom.mupdf");
 		getFromCache(options.pdf, function(_e) {
-			var pdfReader = READER_MODULE.createView({
-				file : _e.path
+			self.documentview = READER_MODULE.createView({
+				file : _e.path,
+				top : 70
 			});
-			pdfReader.setScrollingDirection(READER_MODULE.DIRECTION_HORIZONTAL);
-			self.add(pdfReader);
+			self.documentview.setScrollingDirection(READER_MODULE.DIRECTION_HORIZONTAL);
+			self.add(self.documentview);
 		});
 	}
 	self.addEventListener('open', function(_event) {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hadag');
 		АктйонБар.setSubtitle('Linie' + options.line);
-		АктйонБар.setBackgroundColor('#f00');
+		АктйонБар.setBackgroundColor('#444');
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {
 			activity.actionBar.displayHomeAsUp = true;
 			activity.actionBar.onHomeIconItemSelected = function(_e) {
 				_event.source.close();
-	};
+			};
 		}
-		
+
 	});
+
 	return self;
 };

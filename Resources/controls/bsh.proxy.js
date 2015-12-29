@@ -10,6 +10,8 @@ var getDistance = function(lat1, lon1, lat2, lon2) {
 	return Math.round(d);
 };
 var splitIntoDays = function(sets) {
+	console.log('$$$$$$$$$$$$');
+	console.log(sets.length);
 	var days = [];
 	var today = Moment().startOf('day');
 	var wds = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
@@ -35,6 +37,7 @@ var splitIntoDays = function(sets) {
 			"in_past" : (Moment().diff(Moment.unix(set.timestamp)) > 0) ? true : false
 		});
 	}
+	console.log(days);
 	return days;
 };
 var getCurrent = function(sets) {
@@ -100,6 +103,7 @@ var getCurrent = function(sets) {
 	set.current.direction = (set.prev.type == 'HW') ? '-' : '+';
 	set.current.text = (set.diff.level < 0) ? '⬇ ablaufend' : '⬆ auflaufend';
 	set.next.zeit = Moment.unix(set.next.timestamp).format('D. MMM  HH:mm');
+	console.log(set);
 	return set;
 };
 /*     Module start    */
@@ -235,7 +239,7 @@ TideAdapter.prototype = {
 		}
 		resultSet.close();
 		db.close();
-
+		console.log('Info: tide: '+tideverlauf.length);
 		if (tideverlauf.length > 0) {
 			var set = getCurrent(tideverlauf);
 			var res = {

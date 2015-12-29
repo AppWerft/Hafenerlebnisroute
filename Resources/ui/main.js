@@ -12,14 +12,20 @@ module.exports = function() {
 		title : 'Radlerkarte',
 		backgroundColor : '#092B55'
 	}));
-	self.addTab(Ti.UI.createTab({
-		window : require('ui/touren.window')(),
-		title : 'Touren',
-		backgroundColor : '#092B55'
-	}));
+	
 	self.addTab(Ti.UI.createTab({
 		window : require('ui/tide.window')(),
 		title : 'Tideplan',
+		backgroundColor : '#092B55'
+	}));
+	self.addTab(Ti.UI.createTab({
+		window : require('ui/ferries.window')(),
+		title : 'Fährplan',
+		backgroundColor : '#092B55'
+	}));
+	self.addTab(Ti.UI.createTab({
+		window : require('ui/touren.window')(),
+		title : 'Touren',
 		backgroundColor : '#092B55'
 	}));
 	self.addTab(Ti.UI.createTab({

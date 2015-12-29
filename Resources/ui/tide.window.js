@@ -88,6 +88,7 @@ module.exports = function() {
 		console.log('Info: getPrediction is started');
 		Tide.getPrediction(item.id, {
 			onOk : function(tides) {
+				console.log(tides);
 				/* switch of colorbar */
 				console.log('Info: getPrediction got results');
 				self.swipeRefreshContainer.setRefreshing(false);

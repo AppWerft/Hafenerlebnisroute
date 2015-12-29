@@ -40,6 +40,8 @@ module.exports = function() {
 			self.map.selectAnnotation(self.map.dummyAnnotation);
 		}
 	}
+
+
 	self.map = Map.createView({
 		userLocation : Ti.Geolocation.locationServicesEnabled ? true : false,
 		region : {
@@ -49,6 +51,7 @@ module.exports = function() {
 			latitudeDelta : 0.1
 		},
 		top : 120,
+		routes : {},
 		enableZoomControls : false
 	});
 	self.map.dummyAnnotation = Map.createAnnotation({
@@ -58,7 +61,7 @@ module.exports = function() {
 	});
 	self.map.addAnnotation(self.map.dummyAnnotation);
 	self.map.addEventListener('click', handleMapClick);
-	//self.mapOverlays = require('ui/map.overlays')();
+	self.mapOverlays = require('ui/map.overlays')();
 
 	self.removeOverlay = function(options) {
 		if (options.name && !options.geojson) {
@@ -109,6 +112,7 @@ module.exports = function() {
 				self.map.addPolygon(self.mapOverlays[options.name][title]);
 			});
 		} else {
+			console.log(options);
 			var items = self.mapOverlays[options.name];
 			if (items) {
 				if (items[0].points) {
@@ -123,6 +127,45 @@ module.exports = function() {
 			}
 		}
 	};
+	self.updateRoutes = function(routenames) {
+		/*
+		 self.map.routes is an object, key is name and value are collection of routeViews
+		 */
+		Object.getOwnPropertyNames(self.map.routes).forEach(function(name) {// name of route
+			self.map.routes[name].forEach(function(rv) {
+				// remove all routes:
+				self.map.removeRoute(rv);
+			});
+		});
+		// persists:
+		Ti.App.Properties.setList('ROUTES', routenames);
+		// reload from model:
+		var RouteViews = require('model/routes').getAllRouteViews();
+		// add to map
+		RouteViews.forEach(function(rv) {
+			if (rv.enabled) {
+				self.map.routes[rv.name] = [];
+				rv.views.forEach(function(v) {
+					self.map.routes[rv.name].push(v);
+					self.map.addRoute(v);
+				});
+
+			}
+		});
+	};
+
+	var RouteViews = require('model/routes').getAllRouteViews();
+	RouteViews.forEach(function(rv) {
+		if (rv.enabled) {
+			self.map.routes[rv.name] = [];
+			rv.views.forEach(function(v) {
+				self.map.routes[rv.name].push(v);
+				self.map.addRoute(v);
+			});
+
+		}
+	});
+
 	self.addEventListener('open', function() {
 		console.log('Info: adding Ti.Map');
 		self.add(self.map);
@@ -130,6 +173,6 @@ module.exports = function() {
 	Ti.Gesture.addEventListener('orientationchange', function() {
 		self.map && self.map.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
 	});
-	console.log('GSM='+ require('vendor/gms.test')());
+	console.log('GSM=' + require('vendor/gms.test')());
 	return self;
 };

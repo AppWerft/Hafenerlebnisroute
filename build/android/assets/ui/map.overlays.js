@@ -1,1 +1,1 @@
-function createRouteView(e){return Map.createRoute({points:e.map(function(e){return{latitude:e[0],longitude:e[1]}}),color:"#090",enabled:!0,width:4*Ti.Platform.displayCaps.logicalDensityFactor})}var Map=require("ti.map");module.exports=function(){require("model/routes").getAllRoutes();return};
+/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/Resources/ui/map.overlays.js

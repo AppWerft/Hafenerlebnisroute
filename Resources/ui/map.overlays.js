@@ -1,35 +1,8 @@
 var Map = require('ti.map');
 
-function createRouteView(points) {
-	return Map.createRoute({
-		points : points.map(function(p) {
-			return {
-				latitude : p[0],
-				longitude : p[1]
-			};
-		}),
-		color : '#090',
-		enabled : true,
-		width : Ti.Platform.displayCaps.logicalDensityFactor * 4
-	});
-}
 
 module.exports = function() {
-	var routeViews = {};
-	var enabledRoutegroups = [];
-	var routes = require('model/routes').getAllRoutes();
-	return;
-	var names = Object.getOwnPropertyNames(routes);
-	names.forEach(function(name){
-		if (routes[name].enabled) enabledRoutegroups.push(routes[name]);
-	});
-	enabledRoutegroups.forEach(function(routegroup) {
-		routegroup.polylines.forEach(function(polyline, ndx) {
-			console.log(polyline);
-			routeViews[routegroup.name] = createRouteView(polyline[ndx]);
-		});
-	});
-	console.log(routeViews);
+	
 	return {
 		sehens : require('model/pois').red.map(function(p) {
 			return Map.createAnnotation({

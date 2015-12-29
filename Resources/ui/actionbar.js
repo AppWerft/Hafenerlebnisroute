@@ -59,10 +59,14 @@ module.exports = function(_event) {
 			var picker = require("yy.tidialogs").createMultiPicker({
 				title : "Hafentouren",
 				options : routes.all,
-				selected : routes.selected,
+				selected : Ti.App.Properties.hasProperty('ROUTES')?Ti.App.Properties.getList('ROUTES'):routes.selected,
 				okButtonTitle : "OK",
 			});
+			picker.addEventListener('click',function(e){
+				mapwin.updateRoutes(e.selections);
+			});
 			picker.show();
+			
 		});
 		MENUITEMS.forEach(function(item, itemId) {
 			menu.add({
@@ -91,12 +95,13 @@ module.exports = function(_event) {
 	АктйонБар.backgroundColor = '#444';
 	АктйонБар.setSubtitle('Hamburg');
 	if (activity) {
+		activity.actionBar.logo = '/images/kran.png';
 		activity.onCreateOptionsMenu = handleCreateMenu;
 		activity.invalidateOptionsMenu();
 	} else
 		console.log('Warning: no activity');
-	/*MENUITEMS.forEach(function(item) {
+	MENUITEMS.forEach(function(item) {
 		if (item.enabled)
 			mapwin.addOverlay(item);
-	});*/
+	});
 };
