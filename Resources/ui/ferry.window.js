@@ -32,7 +32,7 @@ module.exports = function(options) {
 	var data = [];
 	var self = Ti.UI.createWindow();
 	self.topcontainer = Ti.UI.createView({
-		top : 70,
+		top : 0,
 		backgroundColor : '#092B55',
 		height : HEIGHT
 	});
@@ -72,7 +72,7 @@ module.exports = function(options) {
 		}
 	}));
 	self.list = Ti.UI.createTableView({
-		top : 170,
+		top : HEIGHT,
 		bottom : 0,
 		separatorColor : '#092B55',
 		backgroundColor : 'white',
@@ -126,7 +126,7 @@ module.exports = function(options) {
 	self.add(self.list);
 	self.list.addEventListener('scroll', function(e) {
 		var top = HEIGHT * e.firstVisibleItem / e.visibleItemCount * 1.2;
-		console.log(top);
+		return;
 		//self.topcontainer.top = 70 + HEIGHT - top;
 		self.list.animate({
 			duration : 150,

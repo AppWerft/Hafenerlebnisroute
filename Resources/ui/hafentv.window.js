@@ -22,7 +22,7 @@ module.exports = function() {
 	});
 	self.add(Ti.UI.createImageView({
 		image : '/assets/pano.png',
-		top : 120,
+		top : 0,//120,
 		width : 1840,
 		height : 700
 	}));
@@ -57,14 +57,14 @@ module.exports = function() {
 		view : self.list,
 		height : Ti.UI.FILL,
 		width : Ti.UI.FILL,
-		top : 125
+		top : 0,//125
 	});
 	self.add(self.swipeRefreshContainer);
 	self.swipeRefreshContainer.addEventListener('refreshing', updateList);
 	self.addEventListener('focus', updateList);
 	self.list.addEventListener('singletap', startYT);
 	Ti.Gesture.addEventListener('orientationchange', function() {
-		self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
+		//self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
 	});
 	return self;
 };

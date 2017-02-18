@@ -8,7 +8,7 @@ var ferries = require('model/pois').ferries;
 module.exports = function() {
 	var self = Ti.UI.createWindow();
 	self.list = Ti.UI.createTableView({
-		top : 120,
+		top : 0,//120,
 		separatorColor :'#102489',
 		bottom : 50,
 		backgroundColor : 'white',
@@ -58,8 +58,8 @@ module.exports = function() {
 		}
 	});
 	Ti.Gesture.addEventListener('orientationchange', function() {
-		self.list && self.list.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
-		self.list && self.list.setBottom(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 50 : 0);
+		//self.list && self.list.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
+		//self.list && self.list.setBottom(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 50 : 0);
 
 	});
 	return self;

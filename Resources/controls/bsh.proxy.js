@@ -10,16 +10,15 @@ var getDistance = function(lat1, lon1, lat2, lon2) {
 	return Math.round(d);
 };
 var splitIntoDays = function(sets) {
-	console.log('$$$$$$$$$$$$');
-	console.log(sets.length);
 	var days = [];
-	var today = Moment().startOf('day');
 	var wds = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
 	for (var i = 0; i < sets.length; i++) {
 		var set = sets[i];
 		var ndx,
 		    label;
-		ndx = Moment.unix(set.timestamp).diff(today, 'days');
+		ndx = Moment.unix(set.timestamp).diff(Moment().startOf('day'), 'days');
+		console.log(Moment.unix(set.timestamp));
+		console.log('I='+ndx);
 		if (ndx < 3) {
 			label = ['Heute', 'Morgen', 'Übermorgen'][ndx];
 		} else {
@@ -129,6 +128,7 @@ TideAdapter.prototype = {
 		}
 		var start = new Date().getTime();
 		var tidesrequest = Ti.Network.createHTTPClient({
+			validatesSecureCertificate : false,
 			ondatastream : function(_e) {
 				if (_e.progress < 0)
 					_callbacks.onprogress(-_e.progress / 610000);

@@ -27,7 +27,7 @@ module.exports = function() {
 	});
 	self.add(Ti.UI.createImageView({
 		image : '/assets/pano.png',
-		top : 120,
+		top : 0,//120,
 		width : 1840,
 		height : 700
 	}));
@@ -36,7 +36,7 @@ module.exports = function() {
 		duration : 1500
 	});
 	var wasserstandView = require('ui/wasserstand').createView();
-	wasserstandView.top = 120;
+	wasserstandView.top = 0;//120;
 	var pin = null;
 	var hasLevel = false;
 	self.scheduler = Ti.UI.createTableView({
@@ -46,7 +46,7 @@ module.exports = function() {
 	});
 	self.swipeRefreshContainer = swipeRefreshModule.createSwipeRefresh({
 		view : self.scheduler,
-		top : 125,
+		top : 0,//125,
 		bottom : 0,
 		height : Ti.UI.FILL,
 		width : Ti.UI.FILL
@@ -184,7 +184,7 @@ module.exports = function() {
 
 	});
 	Ti.Gesture.addEventListener('orientationchange', function() {
-		self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
+		//self.swipeRefreshContainer && self.swipeRefreshContainer.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth  ? 120 : 70);
 	});
 	self.add(wasserstandView);
 	return self;

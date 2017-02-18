@@ -40,8 +40,6 @@ module.exports = function() {
 			self.map.selectAnnotation(self.map.dummyAnnotation);
 		}
 	}
-
-
 	self.map = Map.createView({
 		userLocation : Ti.Geolocation.locationServicesEnabled ? true : false,
 		region : {
@@ -50,10 +48,15 @@ module.exports = function() {
 			longitudeDelta : 0.1,
 			latitudeDelta : 0.1
 		},
-		top : 120,
+		top : 0, //120,
 		routes : {},
 		enableZoomControls : false
 	});
+	var overlay = Map.createTileOverlay({
+		tileProvider : "Stamen",
+		variant : "Watercolor"
+	});
+	self.map.addTileOverlay(overlay);
 	self.map.dummyAnnotation = Map.createAnnotation({
 		image : '/assets/null.png',
 		latitude : 0,
@@ -171,7 +174,7 @@ module.exports = function() {
 		self.add(self.map);
 	});
 	Ti.Gesture.addEventListener('orientationchange', function() {
-		self.map && self.map.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
+		//self.map && self.map.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
 	});
 	console.log('GSM=' + require('vendor/gms.test')());
 	return self;
