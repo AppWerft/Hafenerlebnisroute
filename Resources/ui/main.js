@@ -12,10 +12,20 @@ module.exports = function() {
 		title : 'Radlerkarte',
 		backgroundColor : '#092B55'
 	}));
-	
+	self.addTab(Ti.UI.createTab({
+		window : require('ui/touren.window')(),
+		title : 'Touren',
+		backgroundColor : '#092B55'
+	}));
 	self.addTab(Ti.UI.createTab({
 		window : require('ui/tide.window')(),
 		title : 'Tideplan',
+		backgroundColor : '#092B55'
+	}));
+	
+	self.addTab(Ti.UI.createTab({
+		window : require('ui/regenradar.window')(),
+		title : 'Regenradar',
 		backgroundColor : '#092B55'
 	}));
 	self.addTab(Ti.UI.createTab({
@@ -23,11 +33,7 @@ module.exports = function() {
 		title : 'Fährplan',
 		backgroundColor : '#092B55'
 	}));
-	self.addTab(Ti.UI.createTab({
-		window : require('ui/touren.window')(),
-		title : 'Touren',
-		backgroundColor : '#092B55'
-	}));
+	
 	self.addTab(Ti.UI.createTab({
 		window : require('ui/hafentv.window')(),
 		title : 'HafenTV',

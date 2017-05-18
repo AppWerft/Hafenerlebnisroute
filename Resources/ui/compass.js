@@ -45,9 +45,8 @@ var Widget = function(args) {
 			fontSize : 290
 		},
 		image : '/assets/pfeil.png',
-		width : 300,
+		width : 200,
 		height : 200
-
 	});
 	this.titleView = Ti.UI.createLabel({
 		text : args.name,

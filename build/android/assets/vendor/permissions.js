@@ -1,0 +1,1 @@
+/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/Resources/vendor/permissions.js

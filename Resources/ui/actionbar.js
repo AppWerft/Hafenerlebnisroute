@@ -28,6 +28,11 @@ var MENUITEMS = [{
 	geojson : true,
 	enabled : false,
 	property : 'Terminal'
+},{
+	title : 'Seezeichen',
+	name : 'overlay/seasigns',
+	enabled : true,
+	tileoverlay: true 
 }];
 
 
@@ -59,7 +64,7 @@ module.exports = function(_event) {
 			var picker = require("yy.tidialogs").createMultiPicker({
 				title : "Hafentouren",
 				options : routes.all,
-				selected : Ti.App.Properties.hasProperty('ROUTES')?Ti.App.Properties.getList('ROUTES'):routes.selected,
+				selected : Ti.App.Properties.hasProperty('MYROUTES')?Ti.App.Properties.getList('MYROUTES'):routes.selected,
 				okButtonTitle : "OK",
 			});
 			picker.addEventListener('click',function(e){
@@ -87,12 +92,14 @@ module.exports = function(_event) {
 		});
 		maptypeItem.addEventListener("click", function() {
 			maptypeItem.setChecked(maptypeItem.checked ? false : true);
-			mapwin.map.setMapType((maptypeItem.checked) ? Map.HYBRID_TYPE : Map.NORMAL_TYPE);
+			mapwin.mapView.setMapType((maptypeItem.checked) ? Map.HYBRID_TYPE : Map.NORMAL_TYPE);
 		});
 	};
 	АктйонБар.setTitle('Hafenradeln');
 	АктйонБар.setFont('Aller Bold');
-	АктйонБар.backgroundColor = '#444';
+	АктйонБар.backgroundColor = blue;
+	АктйонБар.setStatusbarColor(red);
+	
 	АктйонБар.setSubtitle('Hamburg');
 	if (activity) {
 		activity.actionBar.logo = '/images/kran.png';

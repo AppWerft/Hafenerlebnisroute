@@ -4,7 +4,7 @@ var TouchGallery = require("com.gbaldera.titouchgallery");
 Module = function(args) {
 	var self = Ti.UI.createWindow({
 		fullscreen : false,
-		backgroundColor : 'gray'
+		backgroundColor : blue
 	});
 	self.gallery = TouchGallery.createTouchGallery({
 		height : Ti.UI.FILL,

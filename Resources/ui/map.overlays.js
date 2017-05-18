@@ -1,8 +1,6 @@
 var Map = require('ti.map');
 
-
 module.exports = function() {
-	
 	return {
 		sehens : require('model/pois').red.map(function(p) {
 			return Map.createAnnotation({

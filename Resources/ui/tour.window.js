@@ -1,5 +1,4 @@
 module.exports = function(args) {
-	console.log(args);
 	var options = arguments[0] || {};
 	var self = Ti.UI.createWindow({
 		backgroundColor : '#092B55'
@@ -7,7 +6,7 @@ module.exports = function(args) {
 	self.add(Ti.UI.createScrollView({
 		schrollType : 'vertical',
 		layout : 'vertical',
-		top : 70,
+		top : 0,
 		backgroundColor : 'white'
 	}));
 	self.addEventListener('open', function(_event) {
@@ -36,14 +35,15 @@ module.exports = function(args) {
 					width : Ti.UI.FILL,
 					height : 'auto'
 				});
-				require('vendor/imagecache')(url, imageView);
+			//	require('vendor/imagecache')(url, imageView);
 				self.children[0].add(imageView);
 			}
 		});
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hafenerlebnistour');
 		АктйонБар.setSubtitle(args.titletext);
-		АктйонБар.setBackgroundColor('#444');
+		АктйонБар.setBackgroundColor(blue);
+		АктйонБар.setStatusbarColor(red);
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {
@@ -57,9 +57,15 @@ module.exports = function(args) {
 				menu.add({
 					title : 'Route',
 					icon : Ti.App.Android.R.drawable.ic_action_map,
+					visible:true,
 					showAsAction : Ti.Android.SHOW_AS_ACTION_IF_ROOM,
 				}).addEventListener("click", function() {
-					require('ui/tourmap.window')(args.route).open();
+					require("vendor/permissions").requestPermissions(["ACCESS_COARSE_LOCATION"],function(success){
+						if (success == true) {
+							require('ui/tourmap.window')(args.route).open();
+						}
+					});
+					
 				});
 			};
 			activity.invalidateOptionsMenu();

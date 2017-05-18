@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 2.0.0
+apiversion: 2
+architectures: armeabi armeabi-v7a x86
+description: ftp4j
+author: Rainer Knöterich
+license: Specify your license
+copyright: Copyright (c) 2017 by 
+
+# these should not be edited
+name: ftp4j
+moduleid: de.appwerft.ftp4j
+guid: a437d1e5-0fd4-4d74-8c05-eb4b3f13cc52
+platform: android
+minsdk: 4.0.1.GA

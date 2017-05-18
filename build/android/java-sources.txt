@@ -2,6 +2,8 @@
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/android/support/v7/appcompat/R.java"
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/android/support/v7/cardview/Manifest.java"
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/android/support/v7/cardview/R.java"
+"/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/com/felipecsl/gifimageview/Manifest.java"
+"/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/com/felipecsl/gifimageview/R.java"
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/com/google/android/gms/Manifest.java"
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/com/google/android/gms/R.java"
 "/Users/fuerst/Documents/APPC_WORKSPACE/HafenRadler/build/android/gen/de/appwerft/hafenradeln/AssetCryptImpl.java"

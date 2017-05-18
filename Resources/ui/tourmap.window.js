@@ -6,8 +6,10 @@ module.exports = function(route) {
 	var self = Ti.UI.createWindow({
 		backgroundColor : 'white'
 	});
+	var style=  Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "model", "darkmapstyle.json").read().getText();
 	self.map = Map.createView({
 		userLocation : true,
+		mapStyle :style,
 		region : {
 			latitude : 53.51,
 			longitude : 9.95,
@@ -15,7 +17,7 @@ module.exports = function(route) {
 			latitudeDelta : 0.1
 		},
 		enableZoomControls : false,
-		mapType : Map.TERRAIN_TYPE
+		mapType : Map.NORMAL_TYPE
 	});
 	var routeView = Map.createRoute({
 		points : route.route.map(function(p) {
@@ -24,7 +26,7 @@ module.exports = function(route) {
 				longitude : p[1]
 			};
 		}),
-		color : '#aa092B55',
+		color : '#ffff00',
 		width : 10
 	});
 	self.addEventListener('open', function(_event) {
@@ -34,8 +36,10 @@ module.exports = function(route) {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Hafenerlebnistour');
 		АктйонБар.setSubtitle(route.title);
-		АктйонБар.setBackgroundColor('#f00');
 		АктйонБар.subtitleColor = "#ccc";
+		АктйонБар.backgroundColor = blue;
+		АктйонБар.setStatusbarColor(red);
+
 		var activity = _event.source.getActivity();
 		if (activity) {
 			activity.actionBar.displayHomeAsUp = true;
@@ -49,7 +53,7 @@ module.exports = function(route) {
 		self.compass = null;
 	});
 	self.compass = require('ui/compass').createView(route.route);
-	
+
 	self.compass && self.compass.start();
 	return self;
 };

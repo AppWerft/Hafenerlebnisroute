@@ -137,7 +137,9 @@ module.exports = function(options) {
 		var АктйонБар = require('com.alcoapps.actionbarextras');
 		АктйонБар.setTitle('Anleger „' + options.title + '“');
 		АктйонБар.setSubtitle(options.line.replace('l', 'Linie: ') + ',   Richtung: „' + options.direction + '“');
-		АктйонБар.setBackgroundColor('#444');
+		АктйонБар.setBackgroundColor(blue);
+		АктйонБар.setStatusbarColor(red);
+		
 		АктйонБар.subtitleColor = "#ccc";
 		var activity = _event.source.getActivity();
 		if (activity) {

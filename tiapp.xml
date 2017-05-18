@@ -3,7 +3,7 @@
     <url>http://hamburger-appwerft.de</url>
     <id>de.appwerft.hafenradeln</id>
     <name>Hafenradeln</name>
-    <version>1.6.2</version>
+    <version>1.7.1</version>
     <publisher>fuerst</publisher>
     <description>nix zu sagen.</description>
     <copyright>2016 by AppWerft</copyright>
@@ -42,7 +42,7 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="162" android:versionName="1.6.2">
+        <manifest android:versionCode="163" android:versionName="1.6.3">
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
@@ -54,6 +54,7 @@
                 android:name="de.appwerft.hafenradeln.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <application android:debuggable="false"
                 android:largeHeap="true" android:theme="@style/Theme.Hafen">
+                <meta-data android:name="com.google.android.gms.version" android:value="10298000"/>
                 <meta-data
                     android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyClRImiOD0jJqIUnnqbNzwr7xOx-BTqewM"/>
             </application>
@@ -69,6 +70,9 @@
         <module platform="android">yy.tidialogs</module>
         <module platform="iphone">ti.map</module>
         <module platform="android" version="2.4.0">ti.map</module>
+        <module platform="android" version="2.0.0">de.appwerft.ftp4j</module>
+        <module platform="android">com.miga.gifview</module>
+        <module platform="android">ti.waterwaveprogress</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -77,6 +81,6 @@
         <target device="mobileweb">false</target>
         <target device="windows">false</target>
     </deployment-targets>
-    <sdk-version>5.2.2.GA</sdk-version>
+    <sdk-version>5.5.1.GA</sdk-version>
     <property name="appc-app-id" type="string">560e801ac120a0eb30109873</property>
 </ti:app>

@@ -1,5 +1,5 @@
 exports.elbtunnelfinkenwerder = [{
-	text : "Die Radtour beginnt in Steinwerder. Das ist der Ort auf der anderen Seite der Elbe. Er liegt am linken Elbufer –  den Landungsbrücken gegenüberliegend. Unter der Woche verkehrt auch eine Fähre, aber am Wochenende müssen wir wohl den alten Elbtunnel nutzen. Der Elbtunneleingang auf der St.Pauli-Seite ist an den Landungsbrücken gelegen und deshalb mit der S1 oder U3 gut zu erreichen."
+	text : "Die Radtour beginnt in Steinwerder. Das ist der Ort auf der anderen Seite der Elbe. Er liegt am linken Elbufer –  den Landungsbrücken gegenüberliegend. Unter der Woche verkehrt auch eine Fähre ab landungsbrücke, aber am Wochenende müssen wir wohl den alten Elbtunnel nutzen. Der Elbtunneleingang auf der St.Pauli-Seite ist flußabwärts von den Landungsbrücken gelegen und deshalb mit der S1 oder U3 gut zu erreichen."
 }, {
 	image : "DSC_0072.png"
 }, {
@@ -25,15 +25,15 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	image : "DSC_0056.png"
 }, {
-	text : "Inmitten des Wasserlaufes, unter der Argentinienbrücke steht auf einem Ponton ein goldenes Kalb. Die Künstlerin Elisabeth Richnow (Jahrgang 1958) hat dieses Symbol für den falschen Tanz um Reichtum und Macht."
+	text : "Inmitten des Wasserlaufes, unter der Argentinienbrücke steht auf einem Ponton ein goldenes Kalb. Die Künstlerin Elisabeth Richnow (Jahrgang 1958) hat dieses Symbol für den falschen Tanz um Reichtum und Macht. Leider ist das Kalb gestohlen worden – und das ist wohl nicht Bestandteil des Kunstwerkes …"
 }, {
 	image : "DSC_0053.png"
 }, {
-	text : "Um auf die nächste Seite zu kömmen, muss dieser Tunnel genutzt werden. Er befindet sich rechts vom Fahrrad."
+	text : "Seit Kurzem gibt es einen direkten Übergang zur Wasserschutzpolizei"
 }, {
 	image : "DSC_0047.png"
 }, {
-	text : "Nach Verlassen des Tunnels überfahren wir zwei Schleusen. Diese Schleusen trennen nicht zwei Wasserniveaus, sondern verhindern nur die Hafenbeckenversandung. Auf der linken Seite wird nicht ausgebaggert und ohne diese Schleusen würden die Sedimente nach rechts migrieren.\n\nVor den beiden Schleusenbrücken sollten wir hier nach rechts auf den Fußweg. Wenn wir das verpassen sollten, müssten wir vor dem Wasserpolizeikommisariat durchs Drängelgitter."
+	text : "Nach Unterfahrung der Hochstraße überfahren wir zwei Schleusen. Diese Schleusen trennen nicht zwei Wasserniveaus, sondern verhindern nur die Hafenbeckenversandung. Auf der linken Seite wird nicht ausgebaggert und ohne diese Schleusen würden die Sedimente nach rechts migrieren.\n\nVor den beiden Schleusenbrücken sollten wir hier nach rechts auf den Fußweg. Wenn wir das verpassen sollten, müssten wir vor dem Wasserpolizeikommisariat durchs Drängelgitter."
 }, {
 	image : "DSC_0046.png"
 }, {
@@ -59,21 +59,23 @@ exports.elbtunnelfinkenwerder = [{
 }, {
 	text : "Auch die Kattwykbrücke ist die größte Hubbrücke Europas. Sie verbindet Moorburg mit der größten Flußinsel Europas – Wilhelmsburg. Sie wird zu Beginn der geraden Stunden für ca. 15 Minuten für den Landverkehr gesperrt. Dann können wie auf obigem Bild Schiffe passieren. "
 }, {
-	text : "Gleich hinter der Brücke wenden wir uns nach rechts und fahren das Ufer des Köhlbrands entlang (hamburgisch: „längs“)."
-}, {
+	text : "Leider ist der Weg rechter Hand durch eine Baustelle gesperrt, so dass wir die Straße bis zur nächsten Kreuzung fahren müssen. Dort biegen wir rechts nach Moorburg ein und unterqueren die Bahnstrecke. Gleich danach biegen wir rechts ein. Die Absperrung sollte uns nicht abhalten."
+}, { 
 	image : "https://upload.wikimedia.org/wikipedia/commons/9/9b/2013-06-08_Projekt_Hei%C3%9Fluftballon_DSCF0867.jpg"
 }, {
-	text : "Links lassen wir den Moorburger Berg liegen, der aus dem Hafenbeckenaushub für das Altenwerder Terminal (rechts) aufgeschüttet wurde.\n\nAltenwerder war ein kleines Dorf im Hafengebiet, von dem heute nur noch die Kirche und der Friedhof erhalten ist. Zu der Kirche fahren wir jetzt"
+	text : "Vor uns liegt der Moorburger Berg. Der Moorburger Berg. Er entstand aus dem Bodenaushub beim Bau des Containerterminals Altenwerder direkt an dessen Südseite auf einer Fläche von etwa 35 Hektar mit einer Länge von 1,4 Kilometern und einer maximalen Breite von 350 Metern. Sein höchster Punkt hat eine Höhe von 21,9 Metern am breiteren Ostende des Berges, das an die Süderelbe grenzt, während der schmale Westteil, durch einen kleinen Bergsattel abgetrennt, nur 18,6 Meter erreicht. An seiner Südseite liegt unmittelbar Moorburg. Wir können auf der Asphaltstraße bleiben, aber auch einen kleinen Abstecher über den Berg machen. Dort oben haben wir einen imposanten Blick über die Hafenanlagen. Hamburger Busunternehmer bieten Touren zu dieser vollautomatischen Krananlage an."
 }, {
-	text : "Am Ende des Weges sehen wir ein Brachland, dort fahren wir rechts. Linker Hand erscheint ein kleiner See. Am Ende des Sees beginnt nach links ein kleiner Weg durchs Grüne, auf dessen Mitte eine Holzbank mit Blick auf den See steht. Jetzt fahren wir ca. 10 Meter zurück und schieben das Rad nach unten. Dort beginnt ein Weg, der rechts von einem Bach gesäumt wird. Er führt direkt zur Altenwerder Kirche. Falls es jetzt Herbst ist, hängen an den vielen verlassenen Streuobstbäumen Äpfel und Renekloden."
+	image : "https://upload.wikimedia.org/wikipedia/commons/a/aa/Hamburg.CTA.Altenwerder.BungaRaya.wmt.jpg"
 }, {
-	image : "http://stiftung-ausgleich-altenwerder.de/wp-content/uploads/2010/08/IMG_1058-e1280755916305.jpg"
-}, {
-	text : "Leider ist die Kirche oft geschlossen, weil der Küster nicht immer zugegen sein kann. Vor der Kirche geht es nach rechts an den Hochzeitsbäumen vorbei zu einer langgezogenen Straße, die uns über die Bahnstrecke führt. Nächstes Ziel ist die Raststätte, die sich hinter der Autobahnunterführung rechter Hand befindet. Dieser Autohof hat 7x24 geöffnet und bietet Kurzweil und Imbiss, der speziell auf Berufskraftfahrer zugeschnitten ist. Die Wirtin Bärbel Uliczka war übrigens die raucherfreundliche Initiatorin, die vor einigen Jahren sehr engagiert gegen das Rauchverbot in Kneipen kämpfte."
-}, {
-	image : "http://www.trucker-treff.com/s/cc_images/cache_2423240960.jpg"
-}, {
-	text : "Oben auf der Brücke sind viele Wegweiser angebracht: einer davon zeigt uns an, wie wir nach Finkenwerder kommen und wieviele Kilometer das noch sind. Alternativ kann man auch der Ausschilderung nach Bubendey folgen. Diese Strecke ist 1 km kürzer und die Fähre 62 hält dort auch. Waltershof hat auch einen Fähranleger, der allerdings nur werktags angefahren wird und auch teilweise nur alle zwei Stunden bedient wird."
+	text : "Am Ende der Straße fahren wir wieder links durch die Absperrung und kommen wieder auf den Moorburger Elbdeich, den wir vor dem Berg verlassen haben. Dort wieder nach rechts unterqueren wir die längste Straßenbrücke Deutschlands, die „Hochstraße Elbmarsch“. D+ Sie ist 4258 m lang. Bis zum Bau der Saale-Elster-Talbrücke war sie die längste Brücke Deutschlands."
+	},{
+	image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Hochstra%C3%9Fe_Elbmarsch_014.jpg"
+	},{
+ 	text : "Nach der Unterquerung der A7 überqueren wir noch die Waltershofer Straße und fahren jetzt eine längere, schlängelnde  Strecke durch Hohenwisch und Frankop. Beide kleine Orte gehören schon zum „Alten Land“."
+},{
+	image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Deich_in_Francop.jpg/1920px-Deich_in_Francop.jpg"
+},{
+	text:"Es gibt nur eine Verbindung zur Finkenwerder Umgehungsstraße. Wenn der Landgasthof „Deutsches Haus“ zu sehen ist, dann ist der rechte Abzweig verpasst. Durch die Apfelfelder geht es zur „An der Alten Süderelbe“. Dort halten wir uns rechts, folgen der Straße bis zur Kreuzung, wo wie links Richtung Finkenwerder einbiegen. An der Gaststätte „Storchennest“ biegen wir in den Osterfelddeich ein. An der Stelle, wo das stillgelegte Gleis den Deich schneidet, nehmen wir den Weg nach rechts and lassen das Gleis links liegen. Am „Finkenwerder Landscheideweg“ fahren wir kurz links, überqueren das Gleis und dort gleich wieder rechts. Wenn der Weg nicht mehr geradeaus geht, schwenken wir nach links und kommen in den Norderschulweg, der uns direkt zur Finkenwerder Hauptstraße „Steendieck“ führt. Wenn wir diese Richtung beibehalten haben wir nach 5 Minuten den Fähranleger erreicht."
 }];
 
 exports.elbtunnelveddel = [{

@@ -1,3 +1,5 @@
+var blue = "#005CA9", red= "#E30613";
+
 ! function() {
 	Ti.UI.backgroundColor = '#092B55';
 	var navigationControler = require('ui/main')();

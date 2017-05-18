@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "595170299549",
+    "project_id": "hafenradeln"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595170299549:android:9fac41a5d45ad671",
+        "android_client_info": {
+          "package_name": "de.appwerft.hafenradler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595170299549-k4gluha0abpbo5en742jhuq4h02uioje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.appwerft.hafenradler",
+            "certificate_hash": "d1b3b7a91683ace986d8412df0eee78d0417801e"
+          }
+        },
+        {
+          "client_id": "595170299549-891kcp6580kudort6onhhpq2700hiuct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3EmON0RP6RJj8HTPO33MbvT-9XjerkD4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

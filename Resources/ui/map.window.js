@@ -20,27 +20,49 @@ module.exports = function() {
 					title : _e.annotation.title,
 					url : _e.annotation.wiki
 				}).open();
-				self.map.deselectAnnotation(self.map.dummyAnnotation);
+				self.mapView.deselectAnnotation(dummyAnnotation);
 				_e.annotation.wiki = undefined;
 
 			}
 		} else if (_e.clicksource == 'polygon') {
-			self.map.dummyAnnotation.setLatitude(_e.source.center.y);
+			dummyAnnotation.setLatitude(_e.source.center.y);
 			if (_e.source.wiki) {
-				self.map.dummyAnnotation.rightButton = '/assets/wiki.png';
-				self.map.dummyAnnotation.wiki = _e.source.wiki;
-				self.map.deselectAnnotation(self.map.dummyAnnotation);
+				dummyAnnotation.rightButton = '/assets/wiki.png';
+				dummyAnnotation.wiki = _e.source.wiki;
+				self.mapView.deselectAnnotation(dummyAnnotation);
 			} else {
-				self.map.dummyAnnotation.rightButton = null;
-				self.map.dummyAnnotation.wiki = undefined;
+				dummyAnnotation.rightButton = null;
+				dummyAnnotation.wiki = undefined;
 			}
-			self.map.dummyAnnotation.setLongitude(_e.source.center.x);
-			self.map.dummyAnnotation.setTitle(_e.source.description);
-			//self.map.dummyAnnotation.setSubtitle(_e.source.area);
-			self.map.selectAnnotation(self.map.dummyAnnotation);
+			dummyAnnotation.setLongitude(_e.source.center.x);
+			dummyAnnotation.setTitle(_e.source.description);
+			//self.mapView.dummyAnnotation.setSubtitle(_e.source.area);
+			self.mapView.selectAnnotation(dummyAnnotation);
 		}
 	}
-	self.map = Map.createView({
+
+	var TileOverlays = {
+		/*"OpenStreetMap/DE" : Map.createTileOverlay({
+		 tileProvider : "OpenStreetMap/DE",
+		 zIndex : -1.0,
+		 fadeIn : true
+		 }),*/
+		"OpenSeaMap" : Map.createTileOverlay({
+			zIndex : 0,
+			tileProvider : "OpenSeaMap"
+		})
+	};
+	var dummyAnnotation = Map.createAnnotation({
+		image : '/assets/null.png',
+		latitude : 0,
+		longitude : 0
+	});
+
+	var factory = Map.createTileProviderFactory();
+
+	var style = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "model", "mapstyle.json").read().getText();
+
+	self.mapView = Map.createView({
 		userLocation : Ti.Geolocation.locationServicesEnabled ? true : false,
 		region : {
 			latitude : 53.51,
@@ -49,49 +71,46 @@ module.exports = function() {
 			latitudeDelta : 0.1
 		},
 		top : 0, //120,
+		mapType : Map.NORMAL_TYPE,
+		mapToolbarEnabled : false,
+		mapStyle : style,
 		routes : {},
+		lifecycleContainer : self,
 		enableZoomControls : false
 	});
-	var overlay = Map.createTileOverlay({
-		tileProvider : "Stamen",
-		variant : "Watercolor"
-	});
-	self.map.addTileOverlay(overlay);
-	self.map.dummyAnnotation = Map.createAnnotation({
-		image : '/assets/null.png',
-		latitude : 0,
-		longitude : 0
-	});
-	self.map.addAnnotation(self.map.dummyAnnotation);
-	self.map.addEventListener('click', handleMapClick);
-	self.mapOverlays = require('ui/map.overlays')();
+
+	self.mapView.addAnnotation(dummyAnnotation);
+	self.mapView.addEventListener('click', handleMapClick);
+	self.mapViewOverlays = require('ui/map.overlays')();
 
 	self.removeOverlay = function(options) {
+		if (options.tileoverlay) {
+			return;
+		}
 		if (options.name && !options.geojson) {
-			var items = self.mapOverlays[options.name];
+			var items = self.mapViewOverlays[options.name];
 			if (items[0].points) {
 				items.forEach(function(route) {
-					self.map.removeRoute(route);
+					self.mapView.removeRoute(route);
 				});
 			} else if (items[0].latitude) {
 				items.forEach(function(annotation) {
-					self.map.removeAnnotation(annotation);
+					self.mapView.removeAnnotation(annotation);
 				});
 			}
 		} else if (options.geojson) {
 			var geojson = require(options.name);
 			geojson.features.forEach(function(feature) {
 				var title = feature.properties[options.property];
-				self.map.removePolygon(self.mapOverlays[options.name][title]);
+				self.mapView.removePolygon(self.mapViewOverlays[options.name][title]);
 			});
 		}
-
 	};
 	self.addOverlay = function(options) {
 		if (options.geojson) {
 			var geojson = require(options.name);
-			if (!self.mapOverlays[options.name]) {
-				self.mapOverlays[options.name] = {};
+			if (!self.mapViewOverlays[options.name]) {
+				self.mapViewOverlays[options.name] = {};
 			}
 			geojson.features.forEach(function(feature) {
 				var title = feature.properties[options.property];
@@ -102,7 +121,7 @@ module.exports = function() {
 					};
 				});
 				var p = new Polygon(feature.geometry.coordinates[0]);
-				self.mapOverlays[options.name][title] = Map.createPolygon({
+				self.mapViewOverlays[options.name][title] = Map.createPolygon({
 					center : p.getCentroid(),
 					area : p.getArea(),
 					wiki : feature.properties.wiki,
@@ -112,19 +131,18 @@ module.exports = function() {
 					strokeWidth : 1,
 					strokeColor : 'gray'
 				});
-				self.map.addPolygon(self.mapOverlays[options.name][title]);
+				self.mapView.addPolygon(self.mapViewOverlays[options.name][title]);
 			});
 		} else {
-			console.log(options);
-			var items = self.mapOverlays[options.name];
+			var items = self.mapViewOverlays[options.name];
 			if (items) {
 				if (items[0].points) {
 					items.forEach(function(route) {
-						self.map.addRoute(route);
+						self.mapView.addRoute(route);
 					});
 				} else if (items[0].latitude) {
 					items.forEach(function(annotation) {
-						self.map.addAnnotation(annotation);
+						self.mapView.addAnnotation(annotation);
 					});
 				}
 			}
@@ -132,12 +150,14 @@ module.exports = function() {
 	};
 	self.updateRoutes = function(routenames) {
 		/*
-		 self.map.routes is an object, key is name and value are collection of routeViews
+		 self.mapView.routes is an object, key is name and value are collection of routeViews
 		 */
-		Object.getOwnPropertyNames(self.map.routes).forEach(function(name) {// name of route
-			self.map.routes[name].forEach(function(rv) {
+		Object.getOwnPropertyNames(self.mapView.routes).forEach(function(name) {// name of route
+			console.log(name);
+			self.mapView.routes[name].forEach(function(rv) {
+				console.log(rv);
 				// remove all routes:
-				self.map.removeRoute(rv);
+				self.mapView.removeRoute(rv);
 			});
 		});
 		// persists:
@@ -147,34 +167,42 @@ module.exports = function() {
 		// add to map
 		RouteViews.forEach(function(rv) {
 			if (rv.enabled) {
-				self.map.routes[rv.name] = [];
+				self.mapView.routes[rv.name] = [];
 				rv.views.forEach(function(v) {
-					self.map.routes[rv.name].push(v);
-					self.map.addRoute(v);
+					self.mapView.routes[rv.name].push(v);
+					self.mapView.addRoute(v);
 				});
 
 			}
 		});
 	};
+	// end of update Routes
 
 	var RouteViews = require('model/routes').getAllRouteViews();
 	RouteViews.forEach(function(rv) {
 		if (rv.enabled) {
-			self.map.routes[rv.name] = [];
+			self.mapView.routes[rv.name] = [];
 			rv.views.forEach(function(v) {
-				self.map.routes[rv.name].push(v);
-				self.map.addRoute(v);
+				self.mapView.routes[rv.name].push(v);
+				self.mapView.addRoute(v);
 			});
 
 		}
 	});
 
 	self.addEventListener('open', function() {
-		console.log('Info: adding Ti.Map');
-		self.add(self.map);
+		self.add(self.mapView);
+		self.mapView.addEventListener('complete', function() {
+			Object.getOwnPropertyNames(TileOverlays).forEach(function(o) {
+				console.log(o);
+				self.mapView.addTileOverlay(Map.createTileOverlay({
+					tileProvider : o
+				}));
+			});
+		});
 	});
 	Ti.Gesture.addEventListener('orientationchange', function() {
-		//self.map && self.map.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
+		//self.mapView && self.mapView.setTop(Ti.Platform.displayCaps.platformHeight > Ti.Platform.displayCaps.platformWidth ? 120 : 70);
 	});
 	console.log('GSM=' + require('vendor/gms.test')());
 	return self;
